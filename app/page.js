@@ -1,100 +1,182 @@
-import Image from "next/image";
+"use client";
+// File: pages/index.js
+import Head from "next/head";
+import { useState } from "react";
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.js
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+  const [copied, setCopied] = useState(false);
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
+  // Your contact details
+  const email = "hi@haroonazizi.com";
+  const twitterUsername = "az_haroon";
+
+  const handleCopyEmail = () => {
+    navigator.clipboard.writeText(email);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 to-black text-white">
+      <Head>
+        <title>code.af | Domain For Sale</title>
+        <meta
+          name="description"
+          content="Premium domain code.af is available for purchase"
+        />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+
+      <main className="container mx-auto px-4 py-16 max-w-4xl">
+        <div className="flex flex-col items-center justify-center space-y-12">
+          {/* Domain Logo/Name */}
+          <div className="text-center">
+            <h1 className="text-6xl md:text-8xl font-bold tracking-tighter">
+              <span className="text-blue-400">code</span>
+              <span className="text-white">.</span>
+              <span className="text-blue-500">af</span>
+            </h1>
+            <p className="mt-4 text-xl md:text-2xl text-gray-300">
+              Premium Domain For Sale
+            </p>
+          </div>
+
+          {/* Domain Info */}
+          <div className="bg-gray-800 bg-opacity-50 backdrop-blur-sm rounded-xl p-8 w-full max-w-2xl border border-gray-700">
+            <h2 className="text-2xl font-bold mb-6 text-blue-400">
+              Why choose code.af?
+            </h2>
+            <ul className="space-y-4">
+              <li className="flex items-start">
+                <svg
+                  className="h-6 w-6 text-blue-400 mr-2"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+                <span>Short, memorable, and tech-focused domain name</span>
+              </li>
+              <li className="flex items-start">
+                <svg
+                  className="h-6 w-6 text-blue-400 mr-2"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+                <span>
+                  Perfect for coding businesses, schools, or developer
+                  portfolios
+                </span>
+              </li>
+              <li className="flex items-start">
+                <svg
+                  className="h-6 w-6 text-blue-400 mr-2"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+                <span>Unique TLD (.af) stands out from common extensions</span>
+              </li>
+              <li className="flex items-start">
+                <svg
+                  className="h-6 w-6 text-blue-400 mr-2"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+                <span>Build your brand with a premium domain</span>
+              </li>
+            </ul>
+          </div>
+
+          {/* Contact Details */}
+          <div className="bg-blue-900 bg-opacity-30 backdrop-blur-sm rounded-xl p-8 w-full max-w-2xl border border-blue-800">
+            <h2 className="text-2xl font-bold mb-6 text-center">
+              Interested? Get in touch
+            </h2>
+            <div className="space-y-4">
+              <div className="flex items-center justify-between p-4 bg-gray-800 bg-opacity-50 rounded-lg">
+                <div className="flex items-center">
+                  <svg
+                    className="h-5 w-5 text-blue-400 mr-3"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                    />
+                  </svg>
+                  <span>{email}</span>
+                </div>
+                <button
+                  onClick={handleCopyEmail}
+                  className="text-sm px-3 py-1 bg-blue-600 hover:bg-blue-700 rounded transition duration-150"
+                >
+                  {copied ? "Copied!" : "Copy"}
+                </button>
+              </div>
+              <a
+                href={`https://x.com/${twitterUsername}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center p-4 bg-gray-800 bg-opacity-50 rounded-lg hover:bg-gray-700 transition duration-150"
+              >
+                <svg
+                  className="h-5 w-5 text-blue-400 mr-3"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                </svg>
+                <span>@{twitterUsername}</span>
+              </a>
+            </div>
+          </div>
+
+          {/* CTA Button */}
           <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            href={`mailto:${email}?subject=Interested%20in%20purchasing%20code.af%20domain`}
+            className="px-8 py-4 bg-blue-500 hover:bg-blue-600 rounded-full text-xl font-bold transition duration-150 shadow-lg transform hover:-translate-y-1"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
+            Make an Offer
           </a>
         </div>
       </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+
+      <footer className="text-center py-8 text-gray-400">
+        <p>© {new Date().getFullYear()} • All rights reserved</p>
       </footer>
     </div>
   );
