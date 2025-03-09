@@ -36,7 +36,7 @@ export default function Home() {
               <span className="text-white">.</span>
               <span className="text-blue-500">af</span>
             </h1>
-            <p className="mt-4 text-xl md:text-2xl text-gray-300">
+            <p className="mt-4 text-2xl md:text-2xl text-gray-300">
               Premium Domain For Sale
             </p>
           </div>
@@ -161,6 +161,27 @@ export default function Home() {
                   <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
                 </svg>
                 <span>@{twitterUsername}</span>
+              </a>
+              <a
+                href="https://haroonazizi.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center p-4 bg-gray-800 bg-opacity-50 rounded-lg hover:bg-gray-700 transition duration-150"
+              >
+                <svg
+                  className="h-5 w-5 text-blue-400 mr-3"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9"
+                  />
+                </svg>
+                <span>www.haroonazizi.com</span>
               </a>
             </div>
           </div>
