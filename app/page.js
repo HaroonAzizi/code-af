@@ -47,7 +47,7 @@ export default function Home() {
       <main className="container mx-auto px-4 py-16 max-w-4xl">
         <div className="flex flex-col items-center justify-center space-y-12">
           {/* Domain Logo/Name */}
-          <div className="text-center">
+          <div className="text-center relative">
             <h1 className="text-6xl md:text-8xl font-bold tracking-tighter">
               <span
                 className={`transition-colors duration-700 ${redColors[colorIndex]}`}
@@ -57,6 +57,11 @@ export default function Home() {
               <span className="text-rose-200">.</span>
               <span className="text-red-500 animate-pulse">af</span>
             </h1>
+            <div className="absolute -top-6 right-0 md:right-10 transform rotate-12">
+              <span className="bg-red-600 text-white text-xs md:text-sm px-4 py-1 rounded-md font-bold shadow-lg border border-red-400 animate-pulse">
+                FOR SALE
+              </span>
+            </div>
             <p className="mt-4 text-2xl md:text-2xl text-gray-300">
               Premium Domain For Sale
             </p>
