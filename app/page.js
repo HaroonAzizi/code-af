@@ -7,7 +7,6 @@ export default function Home() {
   const [copied, setCopied] = useState(false);
   const [colorIndex, setColorIndex] = useState(0);
 
-  // Color animation for the domain name
   const redColors = [
     "text-red-400",
     "text-red-500",
