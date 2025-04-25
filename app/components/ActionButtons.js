@@ -1,4 +1,4 @@
-// components/ActionButtons.js
+
 'use client'; 
 
 import { useEffect } from 'react';
@@ -13,7 +13,7 @@ const ActionButtons = () => {
   };
 
   useEffect(() => {
-    // This ensures scroll works after navigation
+
     if (typeof window !== 'undefined' && window.location.hash === '#why-choose') {
       const element = document.getElementById('why-choose');
       if (element) {

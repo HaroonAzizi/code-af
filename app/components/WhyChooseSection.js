@@ -7,14 +7,14 @@ const WhyChooseSection = () => {
     
     id="why-choose" 
     className=" scroll-mt-20 relative min-h-screen bg-neutral-950 text-white overflow-hidden flex flex-col items-center justify-center px-4 ">
-      {/* Animated background elements */}
+
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/3 left-1/4 w-48 h-48 bg-blue-500/10 rounded-full blur-3xl opacity-20 animate-float"></div>
         <div className="absolute bottom-1/4 right-1/3 w-56 h-56 bg-indigo-500/10 rounded-full blur-3xl opacity-20 animate-float-delay"></div>
       </div>
 
       <div className="w-full max-w-6xl px-4 py-12 md:py-16 relative z-10">
-        {/* Centered heading with enhanced gradient */}
+
         <div className="text-center mb-20">
           <h1 className="text-4xl md:text-5xl xl:text-6xl font-bold leading-tight tracking-tighter">
             <span className="text-white/95">Why choose </span>
@@ -26,7 +26,7 @@ const WhyChooseSection = () => {
          
         </div>
         
-        {/* Features grid with enhanced hover effects */}
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {[
             {
@@ -60,7 +60,7 @@ const WhyChooseSection = () => {
           ))}
         </div>
 
-        {/* Enhanced benefits section */}
+
         <div className="mt-20 bg-gradient-to-br from-blue-900/30 via-blue-950/40 to-indigo-900/30 p-8 rounded-2xl border border-blue-500/20 text-center backdrop-blur-sm">
           <h3 className="text-2xl md:text-3xl font-bold mb-8 text-white/95">
             Premium <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">Domain Benefits</span>
@@ -88,14 +88,14 @@ const WhyChooseSection = () => {
         </div>
       </div>
 
-      {/* Decorative elements */}
+
       <div className="absolute top-1/2 -right-20 w-72 h-px bg-gradient-to-r from-blue-400/0 via-blue-400/50 to-blue-400/0"></div>
       <div className="absolute bottom-20 -left-20 w-72 h-px bg-gradient-to-r from-blue-400/0 via-blue-400/50 to-blue-400/0"></div>
     </section>
   );
 };
 
-// Enhanced icon components with consistent styling
+
 const IconWrapper = ({ children, className = "" }) => (
   <svg 
     className={`w-6 h-6 text-blue-400 flex-shrink-0 ${className}`} 
