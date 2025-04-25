@@ -3,8 +3,10 @@
 
 import { useEffect } from 'react';
 import { usePathname, useSearchParams } from 'next/navigation';
+import { Suspense } from 'react';
 
-const ActionButtons = () => {
+// Create a separate component that uses useSearchParams
+const ActionButtonsContent = () => {
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
@@ -13,7 +15,6 @@ const ActionButtons = () => {
   };
 
   useEffect(() => {
-
     if (typeof window !== 'undefined' && window.location.hash === '#why-choose') {
       const element = document.getElementById('why-choose');
       if (element) {
@@ -24,7 +25,7 @@ const ActionButtons = () => {
 
   return (
     <div className="flex flex-col sm:flex-row gap-4 mt-12">
-   <button
+      <button
         onClick={handleMakeOffer}
         className="px-8 py-3.5 bg-gradient-to-br from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 rounded-full font-medium text-white shadow-lg shadow-blue-500/20 hover:shadow-blue-500/30 transition-all duration-300 transform"
       >
@@ -38,6 +39,24 @@ const ActionButtons = () => {
         Learn More
       </a>
     </div>
+  );
+};
+
+// Main component with Suspense boundary
+const ActionButtons = () => {
+  return (
+    <Suspense fallback={
+      <div className="flex flex-col sm:flex-row gap-4 mt-12">
+        <div className="px-8 py-3.5 bg-gradient-to-br from-blue-600 to-blue-700 rounded-full font-medium text-white shadow-lg shadow-blue-500/20 animate-pulse">
+          Loading...
+        </div>
+        <div className="px-8 py-3.5 border-2 border-white/10 bg-white/5 rounded-full font-medium text-white shadow-lg shadow-white/5 animate-pulse">
+          Loading...
+        </div>
+      </div>
+    }>
+      <ActionButtonsContent />
+    </Suspense>
   );
 };
 
