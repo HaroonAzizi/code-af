@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
 import { Suspense } from "react";
 
-// Create a separate component that uses useSearchParams
+// Created a separate component that uses useSearchParams
 const ActionButtonsContent = () => {
   const pathname = usePathname();
   const searchParams = useSearchParams();
@@ -52,10 +52,10 @@ const ActionButtons = () => {
       fallback={
         <div className="flex flex-col sm:flex-row gap-4 mt-12">
           <div className="px-8 py-3.5 bg-gradient-to-br from-blue-600 to-blue-700 rounded-full font-medium text-white shadow-lg shadow-blue-500/20 animate-pulse">
-            Loading...
+            code.af
           </div>
           <div className="px-8 py-3.5 border-2 border-white/10 bg-white/5 rounded-full font-medium text-white shadow-lg shadow-white/5 animate-pulse">
-            Loading...
+            code.af
           </div>
         </div>
       }

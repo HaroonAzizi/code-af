@@ -9,4 +9,3 @@ const DomainDescription = () => (
 );
 
 export default DomainDescription;
-// comment

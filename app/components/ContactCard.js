@@ -1,14 +1,13 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { FiMail, FiTwitter, FiCopy, FiCheck } from 'react-icons/fi';
-import { TiWorld } from "react-icons/ti";
+import { useState } from "react";
+import { FiMail, FiCopy, FiCheck } from "react-icons/fi";
+import { TfiWorld } from "react-icons/tfi";
+import { FaXTwitter } from "react-icons/fa6";
+import { MdOutlineAlternateEmail } from "react-icons/md";
 
 export default function ContactCard() {
   const [copied, setCopied] = useState(false);
- 
-
-
 
   const email = "hi@haroonazizi.com";
   const handleCopyEmail = () => {
@@ -17,9 +16,6 @@ export default function ContactCard() {
     setTimeout(() => setCopied(false), 2000);
   };
 
-
-
-  
   return (
     <section className="w-full min-h-[70vh] py-12 px-4 flex justify-center bg-neutral-950 text-white ">
       <div className="w-full max-w-xl">
@@ -38,8 +34,8 @@ export default function ContactCard() {
               rel="noopener noreferrer"
               className="flex-1 min-w-[150px] flex items-center justify-center p-3 bg-blue-800/20 hover:bg-blue-700/30 rounded-lg border border-blue-500/20"
             >
-              <FiTwitter className="w-5 h-5 text-blue-400 mr-2" />
-              <span className="text-white/90 text-sm">Twitter/X</span>
+              <FaXTwitter className="w-5 h-5 text-blue-400 mr-2" />
+              <span className="text-white/90 text-sm">@az_haroon</span>
             </a>
 
             <a
@@ -48,14 +44,14 @@ export default function ContactCard() {
               rel="noopener noreferrer"
               className="flex-1 min-w-[150px] flex items-center justify-center p-3 bg-blue-800/20 hover:bg-blue-700/30 rounded-lg border border-blue-500/20"
             >
-              <TiWorld className="w-5 h-5 text-blue-400 mr-2" />
+              <TfiWorld className="w-5 h-5 text-blue-400 mr-2" />
               <span className="text-white/90 text-sm">haroonazizi.com</span>
             </a>
           </div>
 
           <div className="flex items-center justify-between px-4 py-3 bg-blue-800/20 rounded-lg border border-blue-500/20">
             <div className="flex items-center">
-              <FiMail className="w-5 h-5 text-blue-400 mr-3" />
+              <MdOutlineAlternateEmail className="w-5 h-5 text-blue-400 mr-3" />
               <span className="text-white/90 text-sm">hi@haroonazizi.com</span>
             </div>
             <button
