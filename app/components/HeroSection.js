@@ -3,7 +3,7 @@ import { FaCode, FaMobile, FaGlobe, FaRocket } from "react-icons/fa";
 
 const HeroSection = () => {
   return (
-    <div className="min-h-screen bg-neutral-950 text-white overflow-hidden flex items-center justify-center px-4 relative">
+    <div className="min-h-screen bg-neutral-950 text-white overflow-hidden flex items-center justify-center px-4 relative pt-16">
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-blue-400 rounded-full filter blur-3xl opacity-30 animate-float"></div>
@@ -31,10 +31,13 @@ const HeroSection = () => {
       </div>
 
       <div className="flex flex-col items-center text-center space-y-8 max-w-6xl relative z-10">
-        {/* Badge */}
-        <div className="bg-gradient-to-r from-blue-900/50 to-indigo-900/50 px-6 py-2 rounded-full border border-blue-500/30 backdrop-blur-sm">
-          <span className="text-blue-300 text-sm font-medium">
-            🇦🇫 Based in Afghanistan • Serving Worldwide
+        {/* Badge - Responsive */}
+        <div className="bg-gradient-to-r from-blue-900/50 to-indigo-900/50 px-3 sm:px-6 py-2 rounded-full border border-blue-500/30 backdrop-blur-sm">
+          <span className="text-blue-300 text-xs sm:text-sm font-medium">
+            <span className="hidden sm:inline">
+              🇦🇫 Based in Afghanistan • Serving Worldwide
+            </span>
+            <span className="sm:hidden">🇦🇫 Afghanistan • Worldwide</span>
           </span>
         </div>
 
@@ -55,65 +58,71 @@ const HeroSection = () => {
         </div>
 
         {/* Tech icons */}
-        <div className="flex items-center space-x-8 py-6">
-          <div className="bg-blue-500/10 p-3 rounded-lg hover:bg-blue-500/20 transition-all hover:scale-110 animate-pulse-glow">
-            <FaCode className="text-blue-400 text-2xl" />
+        <div className="flex items-center space-x-4 sm:space-x-8 py-6">
+          <div className="bg-blue-500/10 p-2 sm:p-3 rounded-lg hover:bg-blue-500/20 transition-all hover:scale-110 animate-pulse-glow">
+            <FaCode className="text-blue-400 text-xl sm:text-2xl" />
           </div>
           <div
-            className="bg-indigo-500/10 p-3 rounded-lg hover:bg-indigo-500/20 transition-all hover:scale-110 animate-pulse-glow"
+            className="bg-indigo-500/10 p-2 sm:p-3 rounded-lg hover:bg-indigo-500/20 transition-all hover:scale-110 animate-pulse-glow"
             style={{ animationDelay: "0.5s" }}
           >
-            <FaMobile className="text-indigo-400 text-2xl" />
+            <FaMobile className="text-indigo-400 text-xl sm:text-2xl" />
           </div>
           <div
-            className="bg-cyan-500/10 p-3 rounded-lg hover:bg-cyan-500/20 transition-all hover:scale-110 animate-pulse-glow"
+            className="bg-cyan-500/10 p-2 sm:p-3 rounded-lg hover:bg-cyan-500/20 transition-all hover:scale-110 animate-pulse-glow"
             style={{ animationDelay: "1s" }}
           >
-            <FaGlobe className="text-cyan-400 text-2xl" />
+            <FaGlobe className="text-cyan-400 text-xl sm:text-2xl" />
           </div>
           <div
-            className="bg-purple-500/10 p-3 rounded-lg hover:bg-purple-500/20 transition-all hover:scale-110 animate-pulse-glow"
+            className="bg-purple-500/10 p-2 sm:p-3 rounded-lg hover:bg-purple-500/20 transition-all hover:scale-110 animate-pulse-glow"
             style={{ animationDelay: "1.5s" }}
           >
-            <FaRocket className="text-purple-400 text-2xl" />
+            <FaRocket className="text-purple-400 text-xl sm:text-2xl" />
           </div>
         </div>
 
         {/* CTA buttons */}
         <div className="flex flex-col sm:flex-row gap-4 pt-6">
-          <button className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 px-8 py-4 rounded-lg font-semibold text-white transition-all hover:scale-105 hover-lift">
+          <button className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-white transition-all hover:scale-105 hover-lift">
             Start Your Project
           </button>
-          <button className="border border-blue-500/30 hover:border-blue-400 px-8 py-4 rounded-lg font-semibold text-white/90 hover:text-white transition-all hover:bg-blue-500/10">
+          <button className="border border-blue-500/30 hover:border-blue-400 px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-white/90 hover:text-white transition-all hover:bg-blue-500/10">
             View Our Work
           </button>
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-12 w-full max-w-2xl">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8 pt-12 w-full max-w-2xl">
           <div className="text-center">
-            <div className="text-2xl md:text-3xl font-bold text-blue-400">
+            <div className="text-xl sm:text-2xl md:text-3xl font-bold text-blue-400">
               50+
             </div>
-            <div className="text-white/60 text-sm">Projects Delivered</div>
+            <div className="text-white/60 text-xs sm:text-sm">
+              Projects Delivered
+            </div>
           </div>
           <div className="text-center">
-            <div className="text-2xl md:text-3xl font-bold text-indigo-400">
+            <div className="text-xl sm:text-2xl md:text-3xl font-bold text-indigo-400">
               25+
             </div>
-            <div className="text-white/60 text-sm">Happy Clients</div>
+            <div className="text-white/60 text-xs sm:text-sm">
+              Happy Clients
+            </div>
           </div>
           <div className="text-center">
-            <div className="text-2xl md:text-3xl font-bold text-cyan-400">
+            <div className="text-xl sm:text-2xl md:text-3xl font-bold text-cyan-400">
               3+
             </div>
-            <div className="text-white/60 text-sm">Years Experience</div>
+            <div className="text-white/60 text-xs sm:text-sm">
+              Years Experience
+            </div>
           </div>
           <div className="text-center">
-            <div className="text-2xl md:text-3xl font-bold text-purple-400">
+            <div className="text-xl sm:text-2xl md:text-3xl font-bold text-purple-400">
               24/7
             </div>
-            <div className="text-white/60 text-sm">Support</div>
+            <div className="text-white/60 text-xs sm:text-sm">Support</div>
           </div>
         </div>
       </div>

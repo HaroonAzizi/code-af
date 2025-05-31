@@ -192,9 +192,9 @@ export default function ContactCard() {
                   </div>
                   <div>
                     <h4 className="text-white/95 font-semibold mb-1">Phone</h4>
-                    <p className="text-white/70">+93 (0) 700 123 456</p>
+                    <p className="text-white/70">+93 (0) 790 087 137</p>
                     <p className="text-white/60 text-sm">
-                      Available 9 AM - 6 PM (AFT)
+                      Available 9 AM - 8 PM (AFT)
                     </p>
                   </div>
                 </div>
@@ -207,7 +207,9 @@ export default function ContactCard() {
                     <h4 className="text-white/95 font-semibold mb-1">
                       Location
                     </h4>
-                    <p className="text-white/70">Kabul, Afghanistan</p>
+                    <p className="text-white/70">
+                      St. 2, Prozha e Taimani, Kabul, Afghanistan
+                    </p>
                     <p className="text-white/60 text-sm">
                       🇦🇫 Serving clients worldwide
                     </p>
