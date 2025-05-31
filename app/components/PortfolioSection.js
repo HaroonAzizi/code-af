@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import {
   FaGithub,
@@ -9,58 +10,58 @@ import {
 const PortfolioSection = () => {
   const projects = [
     {
-      title: "E-Commerce Platform",
+      title: "Clinic Manager",
       description:
-        "Full-stack e-commerce solution with payment integration, inventory management, and admin dashboard.",
-      image: "🛒",
-      tech: ["React", "Node.js", "MongoDB", "Stripe"],
-      type: "web",
-      link: "#",
-    },
-    {
-      title: "Mobile Banking App",
-      description:
-        "Secure mobile banking application with biometric authentication and real-time transactions.",
-      image: "🏦",
-      tech: ["React Native", "Express", "PostgreSQL"],
-      type: "mobile",
-      link: "#",
-    },
-    {
-      title: "Healthcare Dashboard",
-      description:
-        "Patient management system with appointment scheduling and medical records tracking.",
+        "A full-stack clinic management application with patient records, appointment scheduling, and billing. Built using NextJs and already used in multiple dental clinics.",
       image: "🏥",
-      tech: ["Next.js", "TypeScript", "Prisma"],
+      tech: ["Next.js", "Prisma", "TailwindCSS", "SQLite"],
       type: "web",
-      link: "#",
+      link: "https://haroonazizi.com/portfolio/",
     },
     {
-      title: "Food Delivery App",
+      title: "Typing Speed Test",
       description:
-        "On-demand food delivery platform with real-time tracking and payment processing.",
-      image: "🍕",
-      tech: ["React Native", "Firebase", "Google Maps"],
-      type: "mobile",
-      link: "#",
+        "Test your typing speed and accuracy with this interactive app. Features real-time feedback, customizable tests, and detailed performance analytics.",
+      image: "⌨️",
+      tech: ["Next.js", "TailwindCSS"],
+      type: "web",
+      link: "https://haroonazizi.com/portfolio/",
     },
     {
-      title: "Learning Management System",
+      title: "Aadat: Task and Habit Tracker",
       description:
-        "Educational platform with video streaming, quizzes, and progress tracking for students.",
-      image: "📚",
-      tech: ["React", "Node.js", "AWS", "WebRTC"],
+        "A responsive task management application with real-time updates and GitHub-like contribution graph for tracking habits and productivity.",
+      image: "📝",
+      tech: ["React", "Supabase"],
       type: "web",
-      link: "#",
+      link: "https://haroonazizi.com/portfolio/",
     },
     {
-      title: "Crypto Trading Platform",
+      title: "Unite Video Conferencing",
       description:
-        "Cryptocurrency trading platform with real-time charts and portfolio management.",
-      image: "₿",
-      tech: ["Next.js", "WebSocket", "Charts.js"],
+        "A video conferencing app that helps you connect with family and loved ones. Video calls in Unite don't have limits like Zoom and Google Meet.",
+      image: "📹",
+      tech: ["Next.js", "Prisma", "Node.js"],
       type: "web",
-      link: "#",
+      link: "https://haroonazizi.com/portfolio/",
+    },
+    {
+      title: "Attendance Plus",
+      description:
+        "FaceID enabled attendance system for classrooms and workplaces. Uses computer vision for facial recognition-based attendance tracking.",
+      image: "📸",
+      tech: ["Python", "OpenCV", "Pandas"],
+      type: "web",
+      link: "https://haroonazizi.com/portfolio/",
+    },
+    {
+      title: "Programming Contest App",
+      description:
+        "A web app for programming contests on campus networks without internet connection. Fully implemented and used in Kardan University.",
+      image: "🏆",
+      tech: ["React", "Django", "PostgreSQL"],
+      type: "web",
+      link: "https://haroonazizi.com/portfolio/",
     },
   ];
 
@@ -85,8 +86,9 @@ const PortfolioSection = () => {
             </span>
           </h2>
           <p className="text-lg md:text-xl text-white/70 max-w-3xl mx-auto">
-            Discover some of our recent projects that showcase our expertise in
-            web and mobile development
+            Discover our recent projects that showcase our expertise in web and
+            mobile development - featuring real applications used by clients
+            worldwide.
           </p>
         </div>
 
@@ -103,11 +105,7 @@ const PortfolioSection = () => {
                   {project.image}
                 </div>
                 <div className="flex justify-center">
-                  {project.type === "web" ? (
-                    <FaDesktop className="text-purple-400 text-xl" />
-                  ) : (
-                    <FaMobile className="text-cyan-400 text-xl" />
-                  )}
+                  <FaDesktop className="text-purple-400 text-xl" />
                 </div>
               </div>
 
@@ -134,14 +132,24 @@ const PortfolioSection = () => {
 
                 {/* Action buttons */}
                 <div className="flex justify-between items-center">
-                  <button className="flex items-center space-x-2 text-purple-400 hover:text-purple-300 transition-colors text-sm">
+                  <a
+                    href="https://github.com/haroonazizi"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center space-x-2 text-purple-400 hover:text-purple-300 transition-colors text-sm"
+                  >
                     <FaGithub />
-                    <span>Code</span>
-                  </button>
-                  <button className="flex items-center space-x-2 text-cyan-400 hover:text-cyan-300 transition-colors text-sm">
+                    <span>GitHub</span>
+                  </a>
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center space-x-2 text-cyan-400 hover:text-cyan-300 transition-colors text-sm"
+                  >
                     <FaExternalLinkAlt />
-                    <span>Live Demo</span>
-                  </button>
+                    <span>Learn More</span>
+                  </a>
                 </div>
               </div>
             </div>
@@ -156,15 +164,29 @@ const PortfolioSection = () => {
             </h3>
             <p className="text-white/70 mb-6 max-w-2xl mx-auto">
               Let's bring your ideas to life with our expertise in modern web
-              and mobile development
+              and mobile development. We've helped businesses across various
+              industries achieve their digital goals.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-700 hover:to-cyan-700 px-8 py-3 rounded-lg font-semibold text-white transition-all hover:scale-105">
+              <button
+                onClick={() => {
+                  const element = document.querySelector("#contact");
+                  if (element) {
+                    element.scrollIntoView({ behavior: "smooth" });
+                  }
+                }}
+                className="bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-700 hover:to-cyan-700 px-8 py-3 rounded-lg font-semibold text-white transition-all hover:scale-105"
+              >
                 Get Quote
               </button>
-              <button className="border border-purple-500/30 hover:border-purple-400 px-8 py-3 rounded-lg font-semibold text-white/90 hover:text-white transition-all hover:bg-purple-500/10">
+              <a
+                href="https://haroonazizi.com/portfolio/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="border border-purple-500/30 hover:border-purple-400 px-8 py-3 rounded-lg font-semibold text-white/90 hover:text-white transition-all hover:bg-purple-500/10"
+              >
                 View All Projects
-              </button>
+              </a>
             </div>
           </div>
         </div>

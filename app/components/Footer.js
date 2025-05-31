@@ -52,7 +52,7 @@ export default function Footer() {
                 <FaGithub className="text-gray-400 text-lg" />
               </a>
               <a
-                href="#"
+                href="https://wa.me/+93790087137"
                 className="bg-green-500/10 hover:bg-green-500/20 p-2 rounded-lg transition-all hover:scale-110"
               >
                 <FaWhatsapp className="text-green-400 text-lg" />

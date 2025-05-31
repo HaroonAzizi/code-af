@@ -181,8 +181,12 @@ export default function ContactCard() {
                   </div>
                   <div>
                     <h4 className="text-white/95 font-semibold mb-1">Email</h4>
-                    <p className="text-white/70">hello@code.af</p>
-                    <p className="text-white/70">projects@code.af</p>
+                    <p className="text-white/70 hover:text-white">
+                      <a href="mailto:hello@code.af">hello@code.af</a>
+                    </p>
+                    <p className="text-white/70 hover:text-white">
+                      <a href="mailto:projects@code.af">projects@code.af</a>
+                    </p>
                   </div>
                 </div>
 
@@ -192,7 +196,9 @@ export default function ContactCard() {
                   </div>
                   <div>
                     <h4 className="text-white/95 font-semibold mb-1">Phone</h4>
-                    <p className="text-white/70">+93 (0) 790 087 137</p>
+                    <p className="text-white/70 hover:text-white">
+                      <a href="tel:+93790087137">+93 (0) 790 087 137</a>
+                    </p>
                     <p className="text-white/60 text-sm">
                       Available 9 AM - 8 PM (AFT)
                     </p>
@@ -208,7 +214,7 @@ export default function ContactCard() {
                       Location
                     </h4>
                     <p className="text-white/70">
-                      St. 2, Prozha e Taimani, Kabul, Afghanistan
+                      St. 2, Prozha e Taimani, Kabul
                     </p>
                     <p className="text-white/60 text-sm">
                       🇦🇫 Serving clients worldwide
@@ -226,7 +232,7 @@ export default function ContactCard() {
 
               <div className="flex space-x-4">
                 <a
-                  href="#"
+                  href="https://wa.me/+93790087137"
                   className="bg-green-500/10 hover:bg-green-500/20 p-3 rounded-lg transition-all hover:scale-110 group"
                 >
                   <FaWhatsapp className="text-green-400 text-xl group-hover:scale-110 transition-transform" />
