@@ -1,0 +1,188 @@
+import React from "react";
+import { FaStar, FaQuoteLeft } from "react-icons/fa";
+
+const TestimonialsSection = () => {
+  const testimonials = [
+    {
+      name: "Sarah Johnson",
+      role: "CEO, TechStart Inc.",
+      country: "🇺🇸 USA",
+      rating: 5,
+      text: "code.af delivered an exceptional e-commerce platform that exceeded our expectations. Their team's expertise in modern technologies and attention to detail is remarkable.",
+      project: "E-Commerce Platform",
+    },
+    {
+      name: "Ahmed Hassan",
+      role: "Founder, FinanceFlow",
+      country: "🇦🇪 UAE",
+      rating: 5,
+      text: "Working with code.af was a game-changer for our fintech startup. They built a secure, scalable mobile app that our users love. Highly professional team!",
+      project: "Mobile Banking App",
+    },
+    {
+      name: "Maria Rodriguez",
+      role: "Director, HealthCare Plus",
+      country: "🇪🇸 Spain",
+      rating: 5,
+      text: "The healthcare dashboard they developed streamlined our operations significantly. The UI/UX is intuitive and the backend is robust. Outstanding work!",
+      project: "Healthcare Dashboard",
+    },
+    {
+      name: "James Wilson",
+      role: "CTO, EduLearn",
+      country: "🇬🇧 UK",
+      rating: 5,
+      text: "code.af transformed our educational vision into a powerful learning management system. Their technical skills and communication throughout the project were excellent.",
+      project: "Learning Platform",
+    },
+    {
+      name: "Yuki Tanaka",
+      role: "Product Manager, FoodHub",
+      country: "🇯🇵 Japan",
+      rating: 5,
+      text: "From concept to deployment, code.af delivered a flawless food delivery app. Real-time tracking, payment integration - everything works perfectly!",
+      project: "Food Delivery App",
+    },
+    {
+      name: "Alex Chen",
+      role: "Founder, CryptoTrade",
+      country: "🇸🇬 Singapore",
+      rating: 5,
+      text: "Their expertise in building our crypto trading platform was evident from day one. Complex real-time features implemented flawlessly with great performance.",
+      project: "Trading Platform",
+    },
+  ];
+
+  return (
+    <section
+      id="testimonials"
+      className="relative min-h-screen bg-neutral-950 text-white overflow-hidden py-20 px-4"
+    >
+      {/* Background decorations */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-1/4 left-1/3 w-32 h-32 bg-green-500/10 rounded-full blur-3xl opacity-20 animate-float"></div>
+        <div className="absolute bottom-1/4 right-1/3 w-40 h-40 bg-blue-500/10 rounded-full blur-3xl opacity-20 animate-float-delay"></div>
+        <div className="absolute top-1/2 left-1/6 w-24 h-24 bg-purple-500/10 rounded-full blur-3xl opacity-20 animate-float"></div>
+      </div>
+
+      <div className="max-w-6xl mx-auto relative z-10">
+        {/* Header */}
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            <span className="text-white/95">What Our </span>
+            <span className="bg-gradient-to-r from-green-400 to-blue-400 bg-clip-text text-transparent">
+              Clients Say
+            </span>
+          </h2>
+          <p className="text-lg md:text-xl text-white/70 max-w-3xl mx-auto">
+            Don't just take our word for it - hear from the clients we've helped
+            succeed worldwide
+          </p>
+        </div>
+
+        {/* Testimonials grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {testimonials.map((testimonial, index) => (
+            <div
+              key={index}
+              className="bg-gradient-to-b from-neutral-900/80 to-neutral-950 p-6 rounded-xl border border-neutral-800 hover:border-green-400/40 transition-all duration-300 group hover-lift relative"
+            >
+              {/* Quote icon */}
+              <div className="absolute top-4 right-4 text-green-400/20 group-hover:text-green-400/40 transition-colors">
+                <FaQuoteLeft className="text-2xl" />
+              </div>
+
+              {/* Rating */}
+              <div className="flex items-center mb-4">
+                {[...Array(testimonial.rating)].map((_, i) => (
+                  <FaStar key={i} className="text-yellow-400 text-sm mr-1" />
+                ))}
+                <span className="text-white/60 text-sm ml-2">
+                  ({testimonial.rating}.0)
+                </span>
+              </div>
+
+              {/* Testimonial text */}
+              <p className="text-white/80 mb-6 italic leading-relaxed text-sm">
+                "{testimonial.text}"
+              </p>
+
+              {/* Project */}
+              <div className="mb-4">
+                <span className="bg-green-500/10 text-green-400 px-3 py-1 rounded-full text-xs font-medium">
+                  {testimonial.project}
+                </span>
+              </div>
+
+              {/* Client info */}
+              <div className="border-t border-neutral-800 pt-4">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <h4 className="text-white/95 font-semibold text-sm">
+                      {testimonial.name}
+                    </h4>
+                    <p className="text-white/60 text-xs">{testimonial.role}</p>
+                  </div>
+                  <div className="text-right">
+                    <span className="text-white/70 text-xs">
+                      {testimonial.country}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Stats section */}
+        <div className="mt-20 bg-gradient-to-r from-green-900/30 to-blue-900/30 p-8 rounded-2xl border border-green-500/20 backdrop-blur-sm">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
+            <div>
+              <div className="text-3xl md:text-4xl font-bold text-green-400 mb-2">
+                98%
+              </div>
+              <div className="text-white/70 text-sm">Client Satisfaction</div>
+            </div>
+            <div>
+              <div className="text-3xl md:text-4xl font-bold text-blue-400 mb-2">
+                50+
+              </div>
+              <div className="text-white/70 text-sm">Projects Completed</div>
+            </div>
+            <div>
+              <div className="text-3xl md:text-4xl font-bold text-purple-400 mb-2">
+                25+
+              </div>
+              <div className="text-white/70 text-sm">Countries Served</div>
+            </div>
+            <div>
+              <div className="text-3xl md:text-4xl font-bold text-cyan-400 mb-2">
+                24/7
+              </div>
+              <div className="text-white/70 text-sm">Support Available</div>
+            </div>
+          </div>
+        </div>
+
+        {/* Call to action */}
+        <div className="text-center mt-16">
+          <h3 className="text-2xl md:text-3xl font-bold mb-4 text-white/95">
+            Ready to Join Our Success Stories?
+          </h3>
+          <p className="text-white/70 mb-6 max-w-2xl mx-auto">
+            Let's discuss your project and create something amazing together
+          </p>
+          <button className="bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700 px-8 py-3 rounded-lg font-semibold text-white transition-all hover:scale-105 hover-lift">
+            Start Your Project Today
+          </button>
+        </div>
+      </div>
+
+      {/* Decorative lines */}
+      <div className="absolute top-1/4 -right-20 w-72 h-px bg-gradient-to-r from-green-400/0 via-green-400/50 to-green-400/0"></div>
+      <div className="absolute bottom-1/4 -left-20 w-72 h-px bg-gradient-to-r from-blue-400/0 via-blue-400/50 to-blue-400/0"></div>
+    </section>
+  );
+};
+
+export default TestimonialsSection;
