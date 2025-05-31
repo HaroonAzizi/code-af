@@ -127,10 +127,10 @@ export default function ContactCard() {
                     className="w-full px-4 py-3 bg-neutral-800/50 border border-neutral-700 rounded-lg text-white focus:border-blue-400 focus:outline-none transition-colors"
                   >
                     <option value="">Select budget range</option>
-                    <option value="5k-10k">$5,000 - $10,000</option>
-                    <option value="10k-25k">$10,000 - $25,000</option>
-                    <option value="25k-50k">$25,000 - $50,000</option>
-                    <option value="50k+">$50,000+</option>
+                    <option value="5k-10k">$49 - $99</option>
+                    <option value="10k-25k">$100 - $1,499</option>
+                    <option value="25k-50k">$1,500 - $4,999</option>
+                    <option value="50k+">$5,000+</option>
                   </select>
                 </div>
               </div>
@@ -213,11 +213,13 @@ export default function ContactCard() {
                     <h4 className="text-white/95 font-semibold mb-1">
                       Location
                     </h4>
-                    <p className="text-white/70">
-                      St. 2, Prozha e Taimani, Kabul
-                    </p>
+                    <a href="https://maps.app.goo.gl/fjjF9Yhp2PQsAwDg6?g_st=com.google.maps.preview.copy">
+                      <p className="text-white/70 hover:text-white">
+                        St. 2, Prozha e Taimani, Kabul
+                      </p>
+                    </a>
                     <p className="text-white/60 text-sm">
-                      🇦🇫 Serving clients worldwide
+                      🌍 Serving clients worldwide
                     </p>
                   </div>
                 </div>

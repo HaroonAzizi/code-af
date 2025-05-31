@@ -198,15 +198,27 @@ export default function Footer() {
             <div className="space-y-3 text-sm">
               <div className="flex items-center space-x-3">
                 <FaEnvelope className="text-blue-400 text-sm" />
-                <span className="text-white/70">hello@code.af</span>
+                <a href="mailto:hello@code.af">
+                  <span className="text-white/70 hover:text-white">
+                    hello@code.af
+                  </span>
+                </a>
               </div>
               <div className="flex items-center space-x-3">
                 <FaPhone className="text-green-400 text-sm" />
-                <span className="text-white/70">+93 (0) 700 123 456</span>
+                <a href="tel:+93790087137">
+                  <span className="text-white/70 hover:text-white">
+                    +93 (0) 700 123 456
+                  </span>
+                </a>
               </div>
               <div className="flex items-center space-x-3">
                 <FaMapMarkerAlt className="text-purple-400 text-sm" />
-                <span className="text-white/70">Kabul, Afghanistan</span>
+                <a href="https://maps.app.goo.gl/fjjF9Yhp2PQsAwDg6?g_st=com.google.maps.preview.copy">
+                  <span className="text-white/70 hover:text-white">
+                    St. 2, Prozha e Taimani, Kabul
+                  </span>
+                </a>
               </div>
             </div>
             <div className="bg-blue-500/10 p-3 rounded-lg border border-blue-500/20">
@@ -224,8 +236,11 @@ export default function Footer() {
         <div className="border-t border-neutral-800 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-sm text-white/60">
-              © 2025 code.af • All rights reserved • 🇦🇫 Made with ❤️ in
-              Afghanistan
+              © 2025{" "}
+              <span className="text-white">
+                <a href="https://code.af">code.af</a>
+              </span>{" "}
+              • All rights reserved • 🇦🇫 Made with ❤️ in Afghanistan
             </div>
             <div className="flex items-center space-x-6 text-sm text-white/60">
               <span>Available for international projects</span>
