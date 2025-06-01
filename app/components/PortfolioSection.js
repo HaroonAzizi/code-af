@@ -182,9 +182,9 @@ const PortfolioSection = () => {
               Ready to Start Your Project?
             </h3>
             <p className="text-white/70 mb-6 max-w-2xl mx-auto">
-              Let's bring your ideas to life with our expertise in modern web
-              and mobile development. We've helped businesses across various
-              industries achieve their digital goals.
+              Let&apos;s bring your ideas to life with our expertise in modern
+              web and mobile development. We&apos;ve helped businesses across
+              various industries achieve their digital goals.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button

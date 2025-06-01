@@ -76,7 +76,7 @@ export default function ContactCard() {
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            <span className="text-white/95">Let's Build Something </span>
+            <span className="text-white/95">Let&apos;s Build Something </span>
             <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
               Amazing Together
             </span>
@@ -188,7 +188,7 @@ export default function ContactCard() {
                       Message sent successfully!
                     </p>
                     <p className="text-white/70 text-sm">
-                      We'll get back to you within 24 hours.
+                      We&apos;ll get back to you within 24 hours.
                     </p>
                   </div>
                 </div>

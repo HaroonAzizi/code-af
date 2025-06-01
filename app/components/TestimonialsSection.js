@@ -83,8 +83,8 @@ const TestimonialsSection = () => {
             </span>
           </h2>
           <p className="text-lg md:text-xl text-white/70 max-w-3xl mx-auto">
-            Don't just take our word for it - hear from the clients we've helped
-            succeed worldwide
+            Don&apos;t just take our word for it - hear from the clients
+            we&apos;ve helped succeed worldwide
           </p>
         </div>
 
@@ -112,7 +112,7 @@ const TestimonialsSection = () => {
 
               {/* Testimonial text */}
               <p className="text-white/80 mb-6 italic leading-relaxed text-sm">
-                "{testimonial.text}"
+                &quot;{testimonial.text}&quot;
               </p>
 
               {/* Project */}
@@ -178,7 +178,8 @@ const TestimonialsSection = () => {
             Ready to Join Our Success Stories?
           </h3>
           <p className="text-white/70 mb-6 max-w-2xl mx-auto">
-            Let's discuss your project and create something amazing together
+            Let&apos;s discuss your project and create something amazing
+            together
           </p>
           <button
             onClick={() => scrollToSection("#contact")}
