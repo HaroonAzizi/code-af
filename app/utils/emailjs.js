@@ -9,10 +9,10 @@ class EmailService {
   }
 
   validateConfig() {
-    console.log("EmailJS Configuration Check:");
-    console.log("Public Key:", this.publicKey ? "✅ Set" : "❌ Missing");
-    console.log("Service ID:", this.serviceId ? "✅ Set" : "❌ Missing");
-    console.log("Template ID:", this.templateId ? "✅ Set" : "❌ Missing");
+    // console.log("EmailJS Configuration Check:");
+    // console.log("Public Key:", this.publicKey ? "✅ Set" : "❌ Missing");
+    // console.log("Service ID:", this.serviceId ? "✅ Set" : "❌ Missing");
+    // console.log("Template ID:", this.templateId ? "✅ Set" : "❌ Missing");
 
     const missingFields = [];
     if (!this.publicKey) missingFields.push("NEXT_PUBLIC_EMAILJS_PUBLIC_KEY");
