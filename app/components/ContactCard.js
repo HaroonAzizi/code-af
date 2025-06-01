@@ -310,6 +310,8 @@ export default function ContactCard() {
               <div className="flex space-x-4">
                 <a
                   href="https://wa.me/93790087137"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="bg-green-500/10 hover:bg-green-500/20 p-3 rounded-lg transition-all hover:scale-110 group"
                 >
                   <FaWhatsapp className="text-green-400 text-xl group-hover:scale-110 transition-transform" />
