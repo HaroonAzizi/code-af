@@ -2,11 +2,11 @@
 
 import {
   FaLinkedin,
-  FaGithub,
   FaWhatsapp,
   FaEnvelope,
   FaPhone,
   FaMapMarkerAlt,
+  FaInstagram,
 } from "react-icons/fa";
 
 export default function Footer() {
@@ -47,15 +47,26 @@ export default function Footer() {
               </a>
               <a
                 href="#"
-                className="bg-gray-500/10 hover:bg-gray-500/20 p-2 rounded-lg transition-all hover:scale-110"
-              >
-                <FaGithub className="text-gray-400 text-lg" />
-              </a>
-              <a
-                href="https://wa.me/+93790087137"
                 className="bg-green-500/10 hover:bg-green-500/20 p-2 rounded-lg transition-all hover:scale-110"
               >
                 <FaWhatsapp className="text-green-400 text-lg" />
+              </a>
+              <a
+                href="https://www.instagram.com/codedotaf/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-gradient-to-br from-purple-500/10 via-pink-500/10 to-orange-500/10 hover:from-purple-500/20 hover:via-pink-500/20 hover:to-orange-500/20 p-2 rounded-lg transition-all hover:scale-110 group relative"
+              >
+                <FaInstagram
+                  className="text-lg"
+                  style={{
+                    background:
+                      "linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D, #F56040, #F77737, #FCAF45, #FFDC80)",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                    backgroundClip: "text",
+                  }}
+                />
               </a>
             </div>
           </div>
@@ -198,27 +209,15 @@ export default function Footer() {
             <div className="space-y-3 text-sm">
               <div className="flex items-center space-x-3">
                 <FaEnvelope className="text-blue-400 text-sm" />
-                <a href="mailto:hello@code.af">
-                  <span className="text-white/70 hover:text-white">
-                    hello@code.af
-                  </span>
-                </a>
+                <span className="text-white/70">hello@code.af</span>
               </div>
               <div className="flex items-center space-x-3">
                 <FaPhone className="text-green-400 text-sm" />
-                <a href="tel:+93790087137">
-                  <span className="text-white/70 hover:text-white">
-                    +93 (0) 700 123 456
-                  </span>
-                </a>
+                <span className="text-white/70">+93 (0) 700 123 456</span>
               </div>
               <div className="flex items-center space-x-3">
                 <FaMapMarkerAlt className="text-purple-400 text-sm" />
-                <a href="https://maps.app.goo.gl/fjjF9Yhp2PQsAwDg6?g_st=com.google.maps.preview.copy">
-                  <span className="text-white/70 hover:text-white">
-                    St. 2, Prozha e Taimani, Kabul
-                  </span>
-                </a>
+                <span className="text-white/70">Kabul, Afghanistan</span>
               </div>
             </div>
             <div className="bg-blue-500/10 p-3 rounded-lg border border-blue-500/20">
@@ -236,11 +235,8 @@ export default function Footer() {
         <div className="border-t border-neutral-800 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-sm text-white/60">
-              © 2025{" "}
-              <span className="text-white">
-                <a href="https://code.af">code.af</a>
-              </span>{" "}
-              • All rights reserved • 🇦🇫 Made with ❤️ in Afghanistan
+              © 2025 code.af • All rights reserved • 🇦🇫 Made with ❤️ in
+              Afghanistan
             </div>
             <div className="flex items-center space-x-6 text-sm text-white/60">
               <span>Available for international projects</span>

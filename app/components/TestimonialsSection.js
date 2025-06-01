@@ -1,23 +1,31 @@
+"use client";
 import React from "react";
 import { FaStar, FaQuoteLeft } from "react-icons/fa";
 
 const TestimonialsSection = () => {
+  const scrollToSection = (sectionId) => {
+    const element = document.querySelector(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   const testimonials = [
     {
-      name: "Sarah Johnson",
-      role: "CEO, TechStart Inc.",
-      country: "🇺🇸 USA",
+      name: "Dr. Khybar Azizi",
+      role: "Founder, Azizi Dental Clinic",
+      country: "🇦🇫 Afghanistan",
       rating: 5,
-      text: "code.af delivered an exceptional e-commerce platform that exceeded our expectations. Their team's expertise in modern technologies and attention to detail is remarkable.",
-      project: "E-Commerce Platform",
+      text: "code.af delivered an exceptional clinic manager app for our clinic. The app is very user friendly and the team is very responsive. I highly recommend code.af for any project. ",
+      project: "Dental Clinic Manager App",
     },
     {
-      name: "Ahmed Hassan",
-      role: "Founder, FinanceFlow",
-      country: "🇦🇪 UAE",
+      name: "Muhammad Tahir",
+      role: "Founder, SpotlightLeaks",
+      country: "🇵🇰 Pakistan",
       rating: 5,
-      text: "Working with code.af was a game-changer for our fintech startup. They built a secure, scalable mobile app that our users love. Highly professional team!",
-      project: "Mobile Banking App",
+      text: "I was unsure of giving code.af my website project. But turns out, doing that was one of the best decisions of my life. Code.af gave spotlightleaks.com a new life!",
+      project: "Blog Website",
     },
     {
       name: "Maria Rodriguez",
@@ -44,12 +52,12 @@ const TestimonialsSection = () => {
       project: "Food Delivery App",
     },
     {
-      name: "Alex Chen",
-      role: "Founder, CryptoTrade",
-      country: "🇸🇬 Singapore",
+      name: "Mahmood Razi1",
+      role: "CEO, Kardan University",
+      country: "🇦🇫 Afghanistan",
       rating: 5,
-      text: "Their expertise in building our crypto trading platform was evident from day one. Complex real-time features implemented flawlessly with great performance.",
-      project: "Trading Platform",
+      text: "Their high understanding of new technology and frameworks gave the programming contest app an unmatched speed and breath-taking look. We thank code.af team for their hard work.",
+      project: "Programming Contest App",
     },
   ];
 
@@ -172,7 +180,10 @@ const TestimonialsSection = () => {
           <p className="text-white/70 mb-6 max-w-2xl mx-auto">
             Let's discuss your project and create something amazing together
           </p>
-          <button className="bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700 px-8 py-3 rounded-lg font-semibold text-white transition-all hover:scale-105 hover-lift">
+          <button
+            onClick={() => scrollToSection("#contact")}
+            className="bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700 px-8 py-3 rounded-lg font-semibold text-white transition-all hover:scale-105 hover-lift"
+          >
             Start Your Project Today
           </button>
         </div>

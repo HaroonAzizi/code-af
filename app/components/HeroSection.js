@@ -1,7 +1,15 @@
+"use client";
 import React from "react";
 import { FaCode, FaMobile, FaGlobe, FaRocket } from "react-icons/fa";
 
 const HeroSection = () => {
+  const scrollToSection = (sectionId) => {
+    const element = document.querySelector(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <div className="min-h-screen bg-neutral-950 text-white overflow-hidden flex items-center justify-center px-4 relative pt-16">
       {/* Animated background elements */}
@@ -84,10 +92,16 @@ const HeroSection = () => {
 
         {/* CTA buttons */}
         <div className="flex flex-col sm:flex-row gap-4 pt-6">
-          <button className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-white transition-all hover:scale-105 hover-lift">
+          <button
+            onClick={() => scrollToSection("#contact")}
+            className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-white transition-all hover:scale-105 hover-lift"
+          >
             Start Your Project
           </button>
-          <button className="border border-blue-500/30 hover:border-blue-400 px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-white/90 hover:text-white transition-all hover:bg-blue-500/10">
+          <button
+            onClick={() => scrollToSection("#portfolio")}
+            className="border border-blue-500/30 hover:border-blue-400 px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-white/90 hover:text-white transition-all hover:bg-blue-500/10"
+          >
             View Our Work
           </button>
         </div>

@@ -1,8 +1,16 @@
 "use client";
 
 import { useState } from "react";
-import { FiMail, FiPhone, FiMapPin, FiSend } from "react-icons/fi";
-import { FaWhatsapp, FaLinkedin, FaGithub } from "react-icons/fa";
+import {
+  FiMail,
+  FiPhone,
+  FiMapPin,
+  FiSend,
+  FiCheckCircle,
+  FiXCircle,
+} from "react-icons/fi";
+import { FaWhatsapp, FaLinkedin, FaInstagram } from "react-icons/fa";
+import { emailService } from "../utils/emailjs";
 
 export default function ContactCard() {
   const [formData, setFormData] = useState({
@@ -13,6 +21,8 @@ export default function ContactCard() {
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null); // 'success' | 'error' | null
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleInputChange = (e) => {
     setFormData({
@@ -24,10 +34,24 @@ export default function ContactCard() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      alert("Thank you! We'll get back to you within 24 hours.");
+    setSubmitStatus(null);
+    setErrorMessage("");
+
+    // Prepare template parameters
+    const templateParams = {
+      from_name: formData.name,
+      from_email: formData.email,
+      project_type: formData.project || "Not specified",
+      budget_range: formData.budget || "Not specified",
+      message: formData.message,
+      to_name: "Code.af Team",
+    };
+
+    // Send email using EmailService
+    const result = await emailService.sendEmail(templateParams);
+
+    if (result.success) {
+      setSubmitStatus("success");
       setFormData({
         name: "",
         email: "",
@@ -35,7 +59,12 @@ export default function ContactCard() {
         budget: "",
         message: "",
       });
-    }, 2000);
+    } else {
+      setSubmitStatus("error");
+      setErrorMessage(result.error);
+    }
+
+    setIsSubmitting(false);
   };
 
   return (
@@ -127,10 +156,10 @@ export default function ContactCard() {
                     className="w-full px-4 py-3 bg-neutral-800/50 border border-neutral-700 rounded-lg text-white focus:border-blue-400 focus:outline-none transition-colors"
                   >
                     <option value="">Select budget range</option>
-                    <option value="5k-10k">$49 - $99</option>
-                    <option value="10k-25k">$100 - $1,499</option>
-                    <option value="25k-50k">$1,500 - $4,999</option>
-                    <option value="50k+">$5,000+</option>
+                    <option value="5k-10k">$5,000 - $10,000</option>
+                    <option value="10k-25k">$10,000 - $25,000</option>
+                    <option value="25k-50k">$25,000 - $50,000</option>
+                    <option value="50k+">$50,000+</option>
                   </select>
                 </div>
               </div>
@@ -150,13 +179,61 @@ export default function ContactCard() {
                 />
               </div>
 
+              {/* Status Messages */}
+              {submitStatus === "success" && (
+                <div className="bg-green-500/10 border border-green-500/20 rounded-lg p-4 flex items-center">
+                  <FiCheckCircle className="text-green-400 text-xl mr-3" />
+                  <div>
+                    <p className="text-green-400 font-medium">
+                      Message sent successfully!
+                    </p>
+                    <p className="text-white/70 text-sm">
+                      We'll get back to you within 24 hours.
+                    </p>
+                  </div>
+                </div>
+              )}
+
+              {submitStatus === "error" && (
+                <div className="bg-red-500/10 border border-red-500/20 rounded-lg p-4 flex items-center">
+                  <FiXCircle className="text-red-400 text-xl mr-3" />
+                  <div>
+                    <p className="text-red-400 font-medium">
+                      Failed to send message
+                    </p>
+                    <p className="text-white/70 text-sm">{errorMessage}</p>
+                  </div>
+                </div>
+              )}
+
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 px-8 py-4 rounded-lg font-semibold text-white transition-all hover:scale-105 disabled:opacity-50 disabled:hover:scale-100 flex items-center justify-center"
+                className={`w-full px-8 py-4 rounded-lg font-semibold text-white transition-all flex items-center justify-center ${
+                  isSubmitting
+                    ? "bg-neutral-600 cursor-not-allowed opacity-50"
+                    : submitStatus === "success"
+                    ? "bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 hover:scale-105"
+                    : submitStatus === "error"
+                    ? "bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 hover:scale-105"
+                    : "bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 hover:scale-105"
+                }`}
               >
                 {isSubmitting ? (
-                  <span>Sending...</span>
+                  <>
+                    <div className="animate-spin rounded-full h-5 w-5 border-2 border-white/30 border-t-white mr-2"></div>
+                    <span>Sending...</span>
+                  </>
+                ) : submitStatus === "success" ? (
+                  <>
+                    <FiCheckCircle className="mr-2" />
+                    Sent Successfully
+                  </>
+                ) : submitStatus === "error" ? (
+                  <>
+                    <FiXCircle className="mr-2" />
+                    Try Again
+                  </>
                 ) : (
                   <>
                     <FiSend className="mr-2" />
@@ -181,12 +258,8 @@ export default function ContactCard() {
                   </div>
                   <div>
                     <h4 className="text-white/95 font-semibold mb-1">Email</h4>
-                    <p className="text-white/70 hover:text-white">
-                      <a href="mailto:hello@code.af">hello@code.af</a>
-                    </p>
-                    <p className="text-white/70 hover:text-white">
-                      <a href="mailto:projects@code.af">projects@code.af</a>
-                    </p>
+                    <p className="text-white/70">hello@code.af</p>
+                    <p className="text-white/70">projects@code.af</p>
                   </div>
                 </div>
 
@@ -196,11 +269,9 @@ export default function ContactCard() {
                   </div>
                   <div>
                     <h4 className="text-white/95 font-semibold mb-1">Phone</h4>
-                    <p className="text-white/70 hover:text-white">
-                      <a href="tel:+93790087137">+93 (0) 790 087 137</a>
-                    </p>
+                    <p className="text-white/70">+93 (0) 700 123 456</p>
                     <p className="text-white/60 text-sm">
-                      Available 9 AM - 8 PM (AFT)
+                      Available 9 AM - 6 PM (AFT)
                     </p>
                   </div>
                 </div>
@@ -213,13 +284,9 @@ export default function ContactCard() {
                     <h4 className="text-white/95 font-semibold mb-1">
                       Location
                     </h4>
-                    <a href="https://maps.app.goo.gl/fjjF9Yhp2PQsAwDg6?g_st=com.google.maps.preview.copy">
-                      <p className="text-white/70 hover:text-white">
-                        St. 2, Prozha e Taimani, Kabul
-                      </p>
-                    </a>
+                    <p className="text-white/70">Kabul, Afghanistan</p>
                     <p className="text-white/60 text-sm">
-                      🌍 Serving clients worldwide
+                      🇦🇫 Serving clients worldwide
                     </p>
                   </div>
                 </div>
@@ -234,7 +301,7 @@ export default function ContactCard() {
 
               <div className="flex space-x-4">
                 <a
-                  href="https://wa.me/+93790087137"
+                  href="#"
                   className="bg-green-500/10 hover:bg-green-500/20 p-3 rounded-lg transition-all hover:scale-110 group"
                 >
                   <FaWhatsapp className="text-green-400 text-xl group-hover:scale-110 transition-transform" />
@@ -246,10 +313,21 @@ export default function ContactCard() {
                   <FaLinkedin className="text-blue-400 text-xl group-hover:scale-110 transition-transform" />
                 </a>
                 <a
-                  href="#"
-                  className="bg-gray-500/10 hover:bg-gray-500/20 p-3 rounded-lg transition-all hover:scale-110 group"
+                  href="https://www.instagram.com/codedotaf/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-gradient-to-br from-purple-500/10 via-pink-500/10 to-orange-500/10 hover:from-purple-500/20 hover:via-pink-500/20 hover:to-orange-500/20 p-3 rounded-lg transition-all hover:scale-110 group"
                 >
-                  <FaGithub className="text-gray-400 text-xl group-hover:scale-110 transition-transform" />
+                  <FaInstagram
+                    className="text-xl group-hover:scale-110 transition-transform"
+                    style={{
+                      background:
+                        "linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D, #F56040, #F77737, #FCAF45, #FFDC80)",
+                      WebkitBackgroundClip: "text",
+                      WebkitTextFillColor: "transparent",
+                      backgroundClip: "text",
+                    }}
+                  />
                 </a>
               </div>
 
