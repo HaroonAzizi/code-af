@@ -258,8 +258,12 @@ export default function ContactCard() {
                   </div>
                   <div>
                     <h4 className="text-white/95 font-semibold mb-1">Email</h4>
-                    <p className="text-white/70">hello@code.af</p>
-                    <p className="text-white/70">projects@code.af</p>
+                    <p className="text-white/70 hover:text-white">
+                      <a href="mailto:hello@code.af">hello@code.af</a>
+                    </p>
+                    <p className="text-white/70 hover:text-white">
+                      <a href="mailto:projects@code.af">projects@code.af</a>
+                    </p>
                   </div>
                 </div>
 
@@ -269,9 +273,11 @@ export default function ContactCard() {
                   </div>
                   <div>
                     <h4 className="text-white/95 font-semibold mb-1">Phone</h4>
-                    <p className="text-white/70">+93 (0) 700 123 456</p>
+                    <p className="text-white/70 hover:text-white">
+                      <a href="tel:+93700123456">+93 (0) 790 087 137</a>
+                    </p>
                     <p className="text-white/60 text-sm">
-                      Available 9 AM - 6 PM (AFT)
+                      Available 9 AM - 8 PM (AFT)
                     </p>
                   </div>
                 </div>
@@ -284,7 +290,9 @@ export default function ContactCard() {
                     <h4 className="text-white/95 font-semibold mb-1">
                       Location
                     </h4>
-                    <p className="text-white/70">Kabul, Afghanistan</p>
+                    <p className="text-white/70">
+                      2nd St. Prozha e Taimani, Kabul
+                    </p>
                     <p className="text-white/60 text-sm">
                       🇦🇫 Serving clients worldwide
                     </p>
@@ -301,13 +309,15 @@ export default function ContactCard() {
 
               <div className="flex space-x-4">
                 <a
-                  href="#"
+                  href="https://wa.me/93790087137"
                   className="bg-green-500/10 hover:bg-green-500/20 p-3 rounded-lg transition-all hover:scale-110 group"
                 >
                   <FaWhatsapp className="text-green-400 text-xl group-hover:scale-110 transition-transform" />
                 </a>
                 <a
-                  href="#"
+                  href="https://www.linkedin.com/company/code-af/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="bg-blue-500/10 hover:bg-blue-500/20 p-3 rounded-lg transition-all hover:scale-110 group"
                 >
                   <FaLinkedin className="text-blue-400 text-xl group-hover:scale-110 transition-transform" />

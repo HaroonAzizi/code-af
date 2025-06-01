@@ -40,13 +40,17 @@ export default function Footer() {
             </p>
             <div className="flex space-x-4">
               <a
-                href="#"
+                href="https://www.linkedin.com/company/code-af/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="bg-blue-500/10 hover:bg-blue-500/20 p-2 rounded-lg transition-all hover:scale-110"
               >
                 <FaLinkedin className="text-blue-400 text-lg" />
               </a>
               <a
-                href="#"
+                href="https://wa.me/93790087137"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="bg-green-500/10 hover:bg-green-500/20 p-2 rounded-lg transition-all hover:scale-110"
               >
                 <FaWhatsapp className="text-green-400 text-lg" />
@@ -209,15 +213,21 @@ export default function Footer() {
             <div className="space-y-3 text-sm">
               <div className="flex items-center space-x-3">
                 <FaEnvelope className="text-blue-400 text-sm" />
-                <span className="text-white/70">hello@code.af</span>
+                <span className="text-white/70 hover:text-white">
+                  <a href="mailto:hello@code.af">hello@code.af</a>
+                </span>
               </div>
               <div className="flex items-center space-x-3">
                 <FaPhone className="text-green-400 text-sm" />
-                <span className="text-white/70">+93 (0) 700 123 456</span>
+                <span className="text-white/70 hover:text-white">
+                  <a href="tel:+93790087137"> +93 (0) 790 087 137</a>
+                </span>
               </div>
               <div className="flex items-center space-x-3">
                 <FaMapMarkerAlt className="text-purple-400 text-sm" />
-                <span className="text-white/70">Kabul, Afghanistan</span>
+                <span className="text-white/70">
+                  2nd St. Prozha e Taimani, Kabul
+                </span>
               </div>
             </div>
             <div className="bg-blue-500/10 p-3 rounded-lg border border-blue-500/20">

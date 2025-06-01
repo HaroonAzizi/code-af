@@ -1,11 +1,6 @@
 "use client";
 import React from "react";
-import {
-  FaGithub,
-  FaExternalLinkAlt,
-  FaMobile,
-  FaDesktop,
-} from "react-icons/fa";
+import { FaMobile, FaDesktop } from "react-icons/fa";
 
 const PortfolioSection = () => {
   const projects = [
@@ -16,7 +11,6 @@ const PortfolioSection = () => {
       image: "🏥",
       tech: ["Next.js", "Prisma", "TailwindCSS", "SQLite"],
       type: "web",
-      link: "https://haroonazizi.com/portfolio/",
     },
     {
       title: "Typing Speed Test",
@@ -25,7 +19,6 @@ const PortfolioSection = () => {
       image: "⌨️",
       tech: ["Next.js", "TailwindCSS"],
       type: "web",
-      link: "https://haroonazizi.com/portfolio/",
     },
     {
       title: "Aadat: Task and Habit Tracker",
@@ -34,7 +27,6 @@ const PortfolioSection = () => {
       image: "📝",
       tech: ["React", "Supabase"],
       type: "web",
-      link: "https://haroonazizi.com/portfolio/",
     },
     {
       title: "Unite Video Conferencing",
@@ -43,7 +35,6 @@ const PortfolioSection = () => {
       image: "📹",
       tech: ["Next.js", "Prisma", "Node.js"],
       type: "web",
-      link: "https://haroonazizi.com/portfolio/",
     },
     {
       title: "Attendance Plus",
@@ -52,7 +43,6 @@ const PortfolioSection = () => {
       image: "📸",
       tech: ["Python", "OpenCV", "Pandas"],
       type: "web",
-      link: "https://haroonazizi.com/portfolio/",
     },
     {
       title: "Programming Contest App",
@@ -61,7 +51,54 @@ const PortfolioSection = () => {
       image: "🏆",
       tech: ["React", "Django", "PostgreSQL"],
       type: "web",
-      link: "https://haroonazizi.com/portfolio/",
+    },
+    {
+      title: "E-Commerce Platform",
+      description:
+        "A comprehensive e-commerce solution with inventory management, payment processing, and admin dashboard. Handles 10,000+ products with real-time analytics.",
+      image: "🛒",
+      tech: ["React", "Node.js", "MongoDB", "Stripe"],
+      type: "web",
+    },
+    {
+      title: "FinTech Mobile App",
+      description:
+        "A secure mobile banking application with biometric authentication, money transfers, and investment tracking. Built for iOS and Android platforms.",
+      image: "💳",
+      tech: ["React Native", "Node.js", "PostgreSQL", "AWS"],
+      type: "mobile",
+    },
+    {
+      title: "Healthcare Management System",
+      description:
+        "Cloud-based healthcare platform for hospitals with patient management, telemedicine features, and AI-powered diagnosis assistance.",
+      image: "🩺",
+      tech: ["Vue.js", "Express.js", "MySQL", "Docker"],
+      type: "web",
+    },
+    {
+      title: "Learning Management System",
+      description:
+        "Educational platform with course creation, student progress tracking, and virtual classroom capabilities. Used by 500+ students daily.",
+      image: "📚",
+      tech: ["Next.js", "GraphQL", "PostgreSQL", "Redis"],
+      type: "web",
+    },
+    {
+      title: "IoT Dashboard",
+      description:
+        "Real-time monitoring dashboard for IoT devices with data visualization, alerts, and predictive analytics for industrial automation.",
+      image: "📊",
+      tech: ["React", "Python", "InfluxDB", "WebSocket"],
+      type: "web",
+    },
+    {
+      title: "Food Delivery App",
+      description:
+        "Cross-platform mobile app with real-time order tracking, payment integration, and restaurant management features for food delivery service.",
+      image: "🍕",
+      tech: ["React Native", "Firebase", "Node.js", "Google Maps"],
+      type: "mobile",
     },
   ];
 
@@ -105,7 +142,11 @@ const PortfolioSection = () => {
                   {project.image}
                 </div>
                 <div className="flex justify-center">
-                  <FaDesktop className="text-purple-400 text-xl" />
+                  {project.type === "mobile" ? (
+                    <FaMobile className="text-purple-400 text-xl" />
+                  ) : (
+                    <FaDesktop className="text-purple-400 text-xl" />
+                  )}
                 </div>
               </div>
 
@@ -128,28 +169,6 @@ const PortfolioSection = () => {
                       {tech}
                     </span>
                   ))}
-                </div>
-
-                {/* Action buttons */}
-                <div className="flex justify-between items-center">
-                  <a
-                    href="https://github.com/haroonazizi"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center space-x-2 text-purple-400 hover:text-purple-300 transition-colors text-sm"
-                  >
-                    <FaGithub />
-                    <span>GitHub</span>
-                  </a>
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center space-x-2 text-cyan-400 hover:text-cyan-300 transition-colors text-sm"
-                  >
-                    <FaExternalLinkAlt />
-                    <span>Learn More</span>
-                  </a>
                 </div>
               </div>
             </div>
@@ -179,14 +198,14 @@ const PortfolioSection = () => {
               >
                 Get Quote
               </button>
-              <a
+              {/* <a
                 href="https://haroonazizi.com/portfolio/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="border border-purple-500/30 hover:border-purple-400 px-8 py-3 rounded-lg font-semibold text-white/90 hover:text-white transition-all hover:bg-purple-500/10"
               >
                 View All Projects
-              </a>
+              </a> */}
             </div>
           </div>
         </div>
