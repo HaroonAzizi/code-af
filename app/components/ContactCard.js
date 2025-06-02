@@ -206,41 +206,51 @@ export default function ContactCard() {
                 </div>
               )}
 
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className={`w-full px-8 py-4 rounded-lg font-semibold text-white transition-all flex items-center justify-center ${
-                  isSubmitting
-                    ? "bg-neutral-600 cursor-not-allowed opacity-50"
-                    : submitStatus === "success"
-                    ? "bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 hover:scale-105"
-                    : submitStatus === "error"
-                    ? "bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 hover:scale-105"
-                    : "bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 hover:scale-105"
-                }`}
-              >
-                {isSubmitting ? (
-                  <>
-                    <div className="animate-spin rounded-full h-5 w-5 border-2 border-white/30 border-t-white mr-2"></div>
-                    <span>Sending...</span>
-                  </>
-                ) : submitStatus === "success" ? (
-                  <>
-                    <FiCheckCircle className="mr-2" />
-                    Sent Successfully
-                  </>
-                ) : submitStatus === "error" ? (
-                  <>
-                    <FiXCircle className="mr-2" />
-                    Try Again
-                  </>
-                ) : (
-                  <>
-                    <FiSend className="mr-2" />
-                    Send Message
-                  </>
-                )}
-              </button>
+              {/* Submit button with better spacing and styling */}
+              <div className="pt-4 border-t border-neutral-800/50">
+                <div className="flex justify-center">
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className={`px-12 py-4 rounded-lg font-semibold text-white transition-all flex items-center justify-center min-w-[200px] ${
+                      isSubmitting
+                        ? "bg-neutral-600 cursor-not-allowed opacity-50"
+                        : submitStatus === "success"
+                        ? "bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 hover:scale-105 shadow-lg shadow-green-500/20"
+                        : submitStatus === "error"
+                        ? "bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 hover:scale-105 shadow-lg shadow-red-500/20"
+                        : "bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 hover:scale-105 shadow-lg shadow-blue-500/20"
+                    }`}
+                  >
+                    {isSubmitting ? (
+                      <>
+                        <div className="animate-spin rounded-full h-5 w-5 border-2 border-white/30 border-t-white mr-2"></div>
+                        <span>Sending...</span>
+                      </>
+                    ) : submitStatus === "success" ? (
+                      <>
+                        <FiCheckCircle className="mr-2" />
+                        Sent Successfully
+                      </>
+                    ) : submitStatus === "error" ? (
+                      <>
+                        <FiXCircle className="mr-2" />
+                        Try Again
+                      </>
+                    ) : (
+                      <>
+                        <FiSend className="mr-2" />
+                        Send Message
+                      </>
+                    )}
+                  </button>
+                </div>
+
+                {/* Additional context text */}
+                <p className="text-center text-white/50 text-sm mt-3">
+                  We&apos;ll respond within 24 hours
+                </p>
+              </div>
             </form>
           </div>
 

@@ -60,14 +60,14 @@ const PortfolioSection = () => {
       tech: ["React", "Node.js", "MongoDB", "Stripe"],
       type: "web",
     },
-    {
-      title: "FinTech Mobile App",
-      description:
-        "A secure mobile banking application with biometric authentication, money transfers, and investment tracking. Built for iOS and Android platforms.",
-      image: "💳",
-      tech: ["React Native", "Node.js", "PostgreSQL", "AWS"],
-      type: "mobile",
-    },
+    // {
+    //   title: "FinTech Mobile App",
+    //   description:
+    //     "A secure mobile banking application with biometric authentication, money transfers, and investment tracking. Built for iOS and Android platforms.",
+    //   image: "💳",
+    //   tech: ["React Native", "Node.js", "PostgreSQL", "AWS"],
+    //   type: "mobile",
+    // },
     {
       title: "Healthcare Management System",
       description:
@@ -84,14 +84,14 @@ const PortfolioSection = () => {
       tech: ["Next.js", "GraphQL", "PostgreSQL", "Redis"],
       type: "web",
     },
-    {
-      title: "IoT Dashboard",
-      description:
-        "Real-time monitoring dashboard for IoT devices with data visualization, alerts, and predictive analytics for industrial automation.",
-      image: "📊",
-      tech: ["React", "Python", "InfluxDB", "WebSocket"],
-      type: "web",
-    },
+    // {
+    //   title: "IoT Dashboard",
+    //   description:
+    //     "Real-time monitoring dashboard for IoT devices with data visualization, alerts, and predictive analytics for industrial automation.",
+    //   image: "📊",
+    //   tech: ["React", "Python", "InfluxDB", "WebSocket"],
+    //   type: "web",
+    // },
     {
       title: "Food Delivery App",
       description:
