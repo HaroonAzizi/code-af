@@ -284,7 +284,7 @@ export default function ContactCard() {
                   <div>
                     <h4 className="text-white/95 font-semibold mb-1">Phone</h4>
                     <p className="text-white/70 hover:text-white">
-                      <a href="tel:+93700123456">+93 (0) 790 087 137</a>
+                      <a href="tel:+93790087137">+93 (0) 790 087 137</a>
                     </p>
                     <p className="text-white/60 text-sm">
                       Available 9 AM - 8 PM (AFT)
