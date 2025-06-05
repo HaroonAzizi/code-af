@@ -106,7 +106,7 @@ const WhyChooseSection = () => {
             </span>
           </h3>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 mb-8">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 sm:gap-6 mb-8">
             {[
               { name: "React", icon: "⚛️" },
               { name: "Next.js", icon: "▲" },
@@ -123,17 +123,19 @@ const WhyChooseSection = () => {
             ].map((tech, index) => (
               <div
                 key={index}
-                className="bg-neutral-800/50 p-4 rounded-lg hover:bg-neutral-700/50 transition-all hover:scale-105 cursor-pointer"
+                className="bg-neutral-800/50 p-3 sm:p-4 rounded-lg hover:bg-neutral-700/50 transition-all hover:scale-105 cursor-pointer text-center"
               >
-                <div className="text-2xl mb-2">{tech.icon}</div>
-                <div className="text-white/90 text-sm font-medium">
+                <div className="text-xl sm:text-2xl mb-1 sm:mb-2">
+                  {tech.icon}
+                </div>
+                <div className="text-white/90 text-xs sm:text-sm font-medium">
                   {tech.name}
                 </div>
               </div>
             ))}
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-white/90">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 text-white/90">
             {[
               "Modern frameworks & libraries",
               "Scalable cloud architecture",
@@ -144,10 +146,12 @@ const WhyChooseSection = () => {
             ].map((feature, index) => (
               <div
                 key={index}
-                className="flex items-center justify-center py-2 hover:text-blue-300 transition-colors duration-200"
+                className="flex items-start sm:items-center py-3 sm:py-2 hover:text-blue-300 transition-colors duration-200"
               >
-                <CheckIcon className="mr-3 text-blue-400 min-w-5 flex-shrink-0" />
-                <span className="text-center">{feature}</span>
+                <CheckIcon className="mr-3 text-blue-400 min-w-5 flex-shrink-0 mt-0.5 sm:mt-0" />
+                <span className="text-left sm:text-center leading-relaxed">
+                  {feature}
+                </span>
               </div>
             ))}
           </div>

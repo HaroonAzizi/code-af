@@ -1,8 +1,15 @@
 "use client";
-import React from "react";
-import { FaMobile, FaDesktop } from "react-icons/fa";
+import React, { useState } from "react";
+import {
+  FaMobile,
+  FaDesktop,
+  FaChevronDown,
+  FaChevronUp,
+} from "react-icons/fa";
 
 const PortfolioSection = () => {
+  const [showAll, setShowAll] = useState(false);
+
   const projects = [
     {
       title: "Clinic Manager",
@@ -102,6 +109,10 @@ const PortfolioSection = () => {
     },
   ];
 
+  // Show only first 3 projects initially, or all if showAll is true
+  const displayedProjects = showAll ? projects : projects.slice(0, 3);
+  const remainingCount = projects.length - 3;
+
   return (
     <section
       id="portfolio"
@@ -131,7 +142,7 @@ const PortfolioSection = () => {
 
         {/* Projects grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
+          {displayedProjects.map((project, index) => (
             <div
               key={index}
               className="bg-gradient-to-b from-neutral-800/80 to-neutral-900 rounded-xl overflow-hidden border border-neutral-700 hover:border-purple-400/40 transition-all duration-300 group hover-lift"
@@ -174,6 +185,25 @@ const PortfolioSection = () => {
             </div>
           ))}
         </div>
+
+        {/* Show More/Show Less Button */}
+        {projects.length > 3 && (
+          <div className="text-center mt-12 mb-8">
+            <button
+              onClick={() => setShowAll(!showAll)}
+              className="group bg-gradient-to-r from-purple-600/20 to-cyan-600/20 hover:from-purple-600/30 hover:to-cyan-600/30 border border-purple-500/30 hover:border-purple-400/50 px-8 py-4 rounded-lg font-semibold text-white transition-all hover:scale-105 flex items-center mx-auto space-x-2 backdrop-blur-sm"
+            >
+              <span>
+                {showAll ? "Show Less" : `Show ${remainingCount} More Projects`}
+              </span>
+              {showAll ? (
+                <FaChevronUp className="text-sm group-hover:translate-y-[-2px] transition-transform" />
+              ) : (
+                <FaChevronDown className="text-sm group-hover:translate-y-[2px] transition-transform" />
+              )}
+            </button>
+          </div>
+        )}
 
         {/* Call to action */}
         <div className="text-center mt-16">
