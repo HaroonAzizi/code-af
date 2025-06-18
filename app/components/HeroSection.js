@@ -12,7 +12,7 @@ const HeroSection = () => {
 
   return (
     <div className="min-h-screen bg-neutral-950 text-white overflow-hidden flex items-center justify-center px-4 relative pt-16">
-      {/* Animated background elements */}
+      {/* Animated background stuff */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-blue-400 rounded-full filter blur-3xl opacity-30 animate-float"></div>
         <div className="absolute bottom-1/3 right-1/4 w-40 h-40 bg-indigo-500 rounded-full filter blur-3xl opacity-20 animate-float-delay"></div>
