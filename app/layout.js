@@ -13,6 +13,30 @@ export const metadata = {
   title: "code.af | Web & Mobile App Development Agency",
   description:
     "Professional web and mobile app development agency based in Afghanistan, serving international clients worldwide. Expert developers and designers ready to bring your ideas to life.",
+  openGraph: {
+    title: "code.af | Web & Mobile App Development Agency",
+    description:
+      "Professional web and mobile app development agency based in Afghanistan, serving international clients worldwide. Expert developers and designers ready to bring your ideas to life.",
+    url: "https://code.af",
+    siteName: "code.af",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "code.af - Bringing Your Ideas to Life!",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "code.af | Web & Mobile App Development Agency",
+    description:
+      "Professional web and mobile app development agency based in Afghanistan, serving international clients worldwide. Expert developers and designers ready to bring your ideas to life.",
+    images: ["/og-image.png"],
+  },
 };
 
 export default function RootLayout({ children }) {
