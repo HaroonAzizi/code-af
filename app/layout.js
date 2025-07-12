@@ -1,5 +1,6 @@
 import { Poppins } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
+import Script from "next/script";
 import "./globals.css";
 
 const poppins = Poppins({
@@ -17,6 +18,14 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <Script
+          defer
+          data-domain="code.af"
+          src="https://analytics.had.af/js/script.hash.outbound-links.tagged-events.js"
+          strategy="afterInteractive"
+        />
+      </head>
       <body className={`${poppins.variable} antialiased`}>
         {children}
         <Analytics />
