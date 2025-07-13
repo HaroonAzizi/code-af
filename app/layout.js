@@ -21,7 +21,7 @@ export const metadata = {
     siteName: "code.af",
     images: [
       {
-        url: "/og-image.png",
+        url: "https://code.af/og-image.png",
         width: 1200,
         height: 630,
         alt: "code.af - Bringing Your Ideas to Life!",
@@ -35,7 +35,7 @@ export const metadata = {
     title: "code.af | Web & Mobile App Development Agency",
     description:
       "Professional web and mobile app development agency based in Afghanistan, serving international clients worldwide. Expert developers and designers ready to bring your ideas to life.",
-    images: ["/og-image.png"],
+    images: ["https://code.af/og-image.png"],
   },
 };
 
