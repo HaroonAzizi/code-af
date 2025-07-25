@@ -38,13 +38,13 @@ const Navigation = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 shadow-lg border border-white/10 ${
         scrolled
-          ? "bg-neutral-950/95 backdrop-blur-md border-b border-neutral-800/50"
-          : "bg-transparent"
+          ? "bg-neutral-900/70 backdrop-blur-2xl shadow-[0_4px_24px_0_rgba(0,0,0,0.18)]"
+          : "bg-neutral-900/40 backdrop-blur-xl shadow-[0_2px_8px_0_rgba(0,0,0,0.10)]"
       }`}
     >
-      <div className="max-w-6xl mx-auto px-4">
+      <div className="max-w-6xl mx-auto">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center">
@@ -102,7 +102,7 @@ const Navigation = () => {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden bg-neutral-900/95 backdrop-blur-md border-t border-neutral-800/50">
+          <div className="md:hidden bg-neutral-900/70 backdrop-blur-2xl border-t border-white/10 shadow-[0_4px_24px_0_rgba(0,0,0,0.18)]">
             <div className="px-2 pt-2 pb-3 space-y-1">
               {navItems.map((item) => (
                 <a
