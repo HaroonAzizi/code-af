@@ -85,7 +85,7 @@ const Navigation = () => {
             </button>
           </div>
 
-          {/* Mobile menu button */}
+          {/* Mobile humburger button */}
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
@@ -100,7 +100,7 @@ const Navigation = () => {
           </div>
         </div>
 
-        {/* Mobile Navigation */}
+        {/* For moMobile Navigation */}
         {isOpen && (
           <div className="md:hidden bg-neutral-900/70 backdrop-blur-2xl border-t border-white/10 shadow-[0_4px_24px_0_rgba(0,0,0,0.18)]">
             <div className="px-2 pt-2 pb-3 space-y-1">
