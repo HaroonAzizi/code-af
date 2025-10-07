@@ -77,7 +77,7 @@ export default function LaunchAnnouncement() {
             id="hadaf-launch-desc"
             className="text-neutral-600 leading-relaxed text-sm sm:text-base mb-6"
           >
-            You can download Hadaf for iPhone and iPad or visit our site.
+            Download Hadaf for iPhone and iPad or visit our website.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-3">
