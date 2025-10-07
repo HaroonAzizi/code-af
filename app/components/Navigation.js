@@ -41,7 +41,7 @@ const Navigation = () => {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 shadow-lg border border-white/10 ${
         scrolled
           ? "bg-neutral-900/70 backdrop-blur-2xl shadow-[0_4px_24px_0_rgba(0,0,0,0.18)]"
-          : "bg-neutral-900/40 backdrop-blur-xl shadow-[0_2px_8px_0_rgba(0,0,0,0.10)]"
+          : ""
       }`}
     >
       <div className="max-w-6xl mx-auto px-4">

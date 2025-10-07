@@ -2,6 +2,7 @@ import { Poppins } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import Script from "next/script";
 import "./globals.css";
+import LaunchAnnouncement from "./components/LaunchAnnouncement";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -51,6 +52,7 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body className={`${poppins.variable} antialiased`}>
+        <LaunchAnnouncement />
         {children}
         <Analytics />
       </body>
