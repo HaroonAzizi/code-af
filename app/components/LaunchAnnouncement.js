@@ -83,7 +83,8 @@ export default function LaunchAnnouncement() {
           <div className="flex flex-col sm:flex-row gap-3">
             <a
               ref={firstButtonRef}
-              href="https://app.store.link.placeholder"
+              href="https://apps.apple.com/de/app/hadaf-afghan-learning/id6751640431?l=en-GB"
+              target="_blank"
               className="group flex-1 inline-flex items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-blue-600 to-cyan-600 text-white font-semibold py-3 text-sm sm:text-base shadow hover:shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white transition-all"
             >
               <span className="group-hover:translate-x-0.5 transition-transform">
@@ -92,6 +93,7 @@ export default function LaunchAnnouncement() {
             </a>
             <a
               href="https://had.af"
+              target="_blank"
               className="flex-1 inline-flex items-center justify-center gap-2 rounded-lg bg-white border border-neutral-300 text-neutral-800 font-semibold py-3 text-sm sm:text-base shadow-sm hover:bg-neutral-50 hover:border-neutral-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white transition-all"
             >
               Visit the Site
