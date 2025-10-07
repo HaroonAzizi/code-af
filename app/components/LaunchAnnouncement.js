@@ -96,7 +96,7 @@ export default function LaunchAnnouncement() {
               target="_blank"
               className="flex-1 inline-flex items-center justify-center gap-2 rounded-lg bg-white border border-neutral-300 text-neutral-800 font-semibold py-3 text-sm sm:text-base shadow-sm hover:bg-neutral-50 hover:border-neutral-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white transition-all"
             >
-              Visit the Site
+              Visit the Site (had.af)
             </a>
           </div>
 
