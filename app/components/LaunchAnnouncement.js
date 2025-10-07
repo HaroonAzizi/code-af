@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 
 /*
   LaunchAnnouncement Modal
@@ -55,8 +56,15 @@ export default function LaunchAnnouncement() {
 
         <div className="p-6 sm:p-8">
           <div className="mb-4 flex items-center gap-3">
-            <div className="h-11 w-11 rounded-xl bg-gradient-to-br from-blue-600 to-cyan-500 flex items-center justify-center text-white font-semibold shadow-md shadow-blue-600/30">
-              H
+            <div className="h-11 w-11 rounded-xl bg-white ring-1 ring-neutral-200 flex items-center justify-center overflow-hidden shadow-md">
+              <Image
+                src="/hadaf-ios.png"
+                alt="Hadaf App Logo"
+                width={44}
+                height={44}
+                priority
+                className="h-11 w-11 object-contain"
+              />
             </div>
             <h2
               id="hadaf-launch-title"
