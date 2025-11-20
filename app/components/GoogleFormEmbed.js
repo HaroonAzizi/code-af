@@ -8,6 +8,32 @@ import { useEffect, useState, useRef, useMemo } from "react";
 export default function GoogleFormEmbed({ src, forcedLocale = "en" }) {
   const [loaded, setLoaded] = useState(false);
   const iframeRef = useRef(null);
+  const wrapperRef = useRef(null);
+  const [scale, setScale] = useState(1);
+
+  // Base dimensions Google Form typically renders at (from embed attributes)
+  const BASE_W = 640;
+  const BASE_H = 861;
+
+  useEffect(() => {
+    const computeScale = () => {
+      if (!wrapperRef.current) return;
+      const vw = window.innerWidth;
+      const vh = window.innerHeight;
+      // Provide some padding margins so not flush to edges
+      const horizontalPadding = vw < 768 ? 24 : 64; // px
+      const verticalPadding = vw < 768 ? 24 : 96; // px
+      const maxWidth = vw - horizontalPadding;
+      const maxHeight = vh - verticalPadding;
+      const widthScale = maxWidth / BASE_W;
+      const heightScale = maxHeight / BASE_H;
+      const nextScale = Math.min(1, widthScale, heightScale);
+      setScale(nextScale < 0.3 ? 0.3 : nextScale); // clamp minimal readability
+    };
+    computeScale();
+    window.addEventListener("resize", computeScale);
+    return () => window.removeEventListener("resize", computeScale);
+  }, []);
 
   useEffect(() => {
     const handleLoad = () => {
@@ -33,7 +59,10 @@ export default function GoogleFormEmbed({ src, forcedLocale = "en" }) {
   }, [src, forcedLocale]);
 
   return (
-    <div className="relative aspect-[640/861] w-full mx-auto">
+    <div
+      ref={wrapperRef}
+      className="relative w-full mx-auto flex justify-center"
+    >
       {/* Skeleton */}
       {!loaded && (
         <div className="absolute inset-0 animate-pulse bg-gradient-to-br from-neutral-800 via-neutral-700 to-neutral-800 rounded-lg flex items-center justify-center text-neutral-400 text-sm">
@@ -41,7 +70,14 @@ export default function GoogleFormEmbed({ src, forcedLocale = "en" }) {
         </div>
       )}
       <div
-        className={`h-full w-full rounded-lg overflow-hidden transition-opacity duration-500 ${
+        style={{
+          width: BASE_W,
+          height: BASE_H,
+          transform: `scale(${scale})`,
+          transformOrigin: "top center",
+          transition: "transform 300ms cubic-bezier(.4,0,.2,1)",
+        }}
+        className={`rounded-lg overflow-hidden ${
           loaded ? "opacity-100" : "opacity-0"
         } forced-dark-form`}
       >
@@ -70,6 +106,10 @@ export default function GoogleFormEmbed({ src, forcedLocale = "en" }) {
           .forced-dark-form iframe {
             filter: invert(0.05) hue-rotate(0deg) contrast(1) brightness(1);
           }
+        }
+        /* Keep skeleton sized proportionally during scale */
+        .forced-dark-form {
+          will-change: transform;
         }
       `}</style>
     </div>

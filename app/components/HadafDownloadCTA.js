@@ -47,7 +47,7 @@ export default function HadafDownloadCTA() {
               id="hadaf-cta-title"
               className="text-2xl sm:text-3xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-cyan-300 to-blue-500"
             >
-              Experience Hadaf Anywhere
+              Learn with Hadaf Anywhere
             </h2>
             <p className="mt-4 text-neutral-400 max-w-xl mx-auto sm:mx-0 text-sm sm:text-base leading-relaxed">
               Learn, grow and prepare for global opportunities. Download the
