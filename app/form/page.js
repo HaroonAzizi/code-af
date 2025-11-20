@@ -27,7 +27,7 @@ export default function FormPage() {
             surrounding experience is customized and dark-mode ready.
           </p>
           <div className="mt-10 max-w-3xl mx-auto">
-            <GoogleFormEmbed src={FORM_SRC} />
+            <GoogleFormEmbed src={FORM_SRC} forcedLocale="en-GB" />
           </div>
           <p className="mt-6 text-xs text-neutral-500 text-center">
             Having trouble?{" "}

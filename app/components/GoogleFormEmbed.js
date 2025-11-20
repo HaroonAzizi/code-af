@@ -1,8 +1,11 @@
 "use client";
 
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef, useMemo } from "react";
 
-export default function GoogleFormEmbed({ src }) {
+// Props:
+// - src: base Google Form URL
+// - forcedLocale: optional language code (e.g. 'en', 'en-GB') to append as hl= param
+export default function GoogleFormEmbed({ src, forcedLocale = "en" }) {
   const [loaded, setLoaded] = useState(false);
   const iframeRef = useRef(null);
 
@@ -21,6 +24,14 @@ export default function GoogleFormEmbed({ src }) {
     return () => iframe && iframe.removeEventListener("load", handleLoad);
   }, []);
 
+  // Build final src with hl param forcing language if not present
+  const finalSrc = useMemo(() => {
+    if (!src) return src;
+    if (/([?&])hl=/.test(src)) return src; // already has language
+    const join = src.includes("?") ? "&" : "?";
+    return `${src}${join}hl=${encodeURIComponent(forcedLocale)}`;
+  }, [src, forcedLocale]);
+
   return (
     <div className="relative aspect-[640/861] w-full mx-auto">
       {/* Skeleton */}
@@ -36,7 +47,7 @@ export default function GoogleFormEmbed({ src }) {
       >
         <iframe
           ref={iframeRef}
-          src={src}
+          src={finalSrc}
           className="h-full w-full"
           style={{ border: 0 }}
           loading="lazy"
