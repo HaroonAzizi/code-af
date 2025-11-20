@@ -9,30 +9,23 @@ export default function GoogleFormEmbed({ src, forcedLocale = "en" }) {
   const [loaded, setLoaded] = useState(false);
   const iframeRef = useRef(null);
   const wrapperRef = useRef(null);
-  const [scale, setScale] = useState(1);
-
-  // Base dimensions Google Form typically renders at (from embed attributes)
-  const BASE_W = 640;
-  const BASE_H = 861;
+  const [iframeHeight, setIframeHeight] = useState("1200px");
 
   useEffect(() => {
-    const computeScale = () => {
-      if (!wrapperRef.current) return;
-      const vw = window.innerWidth;
-      const vh = window.innerHeight;
-      // Provide some padding margins so not flush to edges
-      const horizontalPadding = vw < 768 ? 24 : 64; // px
-      const verticalPadding = vw < 768 ? 24 : 96; // px
-      const maxWidth = vw - horizontalPadding;
-      const maxHeight = vh - verticalPadding;
-      const widthScale = maxWidth / BASE_W;
-      const heightScale = maxHeight / BASE_H;
-      const nextScale = Math.min(1, widthScale, heightScale);
-      setScale(nextScale < 0.3 ? 0.3 : nextScale); // clamp minimal readability
+    const updateHeight = () => {
+      const width = window.innerWidth;
+      // Adjust height based on screen size for better mobile experience
+      if (width < 640) {
+        setIframeHeight("1400px");
+      } else if (width < 768) {
+        setIframeHeight("1300px");
+      } else {
+        setIframeHeight("1200px");
+      }
     };
-    computeScale();
-    window.addEventListener("resize", computeScale);
-    return () => window.removeEventListener("resize", computeScale);
+    updateHeight();
+    window.addEventListener("resize", updateHeight);
+    return () => window.removeEventListener("resize", updateHeight);
   }, []);
 
   useEffect(() => {
@@ -59,27 +52,24 @@ export default function GoogleFormEmbed({ src, forcedLocale = "en" }) {
   }, [src, forcedLocale]);
 
   return (
-    <div
-      ref={wrapperRef}
-      className="relative w-full mx-auto flex justify-center"
-    >
+    <div ref={wrapperRef} className="relative w-full mx-auto">
       {/* Skeleton */}
       {!loaded && (
-        <div className="absolute inset-0 animate-pulse bg-gradient-to-br from-neutral-800 via-neutral-700 to-neutral-800 rounded-lg flex items-center justify-center text-neutral-400 text-sm">
+        <div
+          className="absolute inset-0 animate-pulse bg-gradient-to-br from-neutral-800 via-neutral-700 to-neutral-800 rounded-lg flex items-center justify-center text-neutral-400 text-sm"
+          style={{ minHeight: iframeHeight }}
+        >
           Loading form…
         </div>
       )}
       <div
-        style={{
-          width: BASE_W,
-          height: BASE_H,
-          transform: `scale(${scale})`,
-          transformOrigin: "top center",
-          transition: "transform 300ms cubic-bezier(.4,0,.2,1)",
-        }}
-        className={`rounded-lg overflow-hidden ${
+        className={`rounded-lg overflow-hidden transition-opacity duration-300 ${
           loaded ? "opacity-100" : "opacity-0"
         } forced-dark-form`}
+        style={{
+          width: "100%",
+          height: iframeHeight,
+        }}
       >
         <iframe
           ref={iframeRef}
