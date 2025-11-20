@@ -18,13 +18,37 @@ export default function FormPage() {
           <div className="absolute -top-24 -left-24 h-64 w-64 bg-blue-600/10 rounded-full blur-3xl" />
           <div className="absolute -bottom-20 -right-16 h-72 w-72 bg-cyan-500/10 rounded-full blur-3xl" />
           <h1 className="text-3xl sm:text-4xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-cyan-300 to-blue-500">
-            Send Us a Message
+            Register for the upcoming webinar
           </h1>
           <p className="mt-5 max-w-2xl text-neutral-400 text-sm sm:text-base leading-relaxed">
-            Share your project details, questions, or feedback. Our team will
-            review every submission. The embedded form below is powered by
-            Google Forms — we cannot restyle its internal UI deeply, but the
-            surrounding experience is customized and dark-mode ready.
+            Join our free webinar on{" "}
+            <b>“Software Engineering: A Million-Dollar Market for Afghans”</b>,
+            presented by <b>Haroon Azizi</b>, creator of the{" "}
+            <a
+              href="https://had.af"
+              className="underline decoration-dotted hover:text-neutral-300"
+              target="_blank"
+            >
+              {" "}
+              Hadaf
+            </a>{" "}
+            and{" "}
+            <a
+              href="https://code.af"
+              className="underline decoration-dotted hover:text-neutral-300"
+              target="_blank"
+            >
+              {" "}
+              Code.af
+            </a>{" "}
+            . In this session, Haroon will explore career opportunities in
+            software engineering, how Afghans can enter the global tech market,
+            and practical steps to start earning in this field.
+            <br />
+            <br />
+            Monday, 24 November 2025
+            <br />
+            8:00 PM Kabul Time
           </p>
           <div className="mt-10 max-w-3xl mx-auto">
             <GoogleFormEmbed src={FORM_SRC} forcedLocale="en-GB" />
