@@ -29,20 +29,38 @@ export default function GoogleFormEmbed({ src }) {
           Loading form…
         </div>
       )}
-      <iframe
-        ref={iframeRef}
-        src={src}
-        className={`h-full w-full rounded-lg bg-white transition-opacity duration-500 ${
+      <div
+        className={`h-full w-full rounded-lg overflow-hidden transition-opacity duration-500 ${
           loaded ? "opacity-100" : "opacity-0"
-        }`}
-        style={{ border: 0 }}
-        loading="lazy"
-        referrerPolicy="no-referrer"
-        title="Contact Form"
+        } forced-dark-form`}
       >
-        Loading…
-      </iframe>
+        <iframe
+          ref={iframeRef}
+          src={src}
+          className="h-full w-full"
+          style={{ border: 0 }}
+          loading="lazy"
+          referrerPolicy="no-referrer"
+          title="Contact Form"
+        >
+          Loading…
+        </iframe>
+      </div>
       {/* Optional dark mode helper: we cannot style inside iframe; filter invert is avoided to preserve brand colors */}
+      <style jsx>{`
+        /* Force dark appearance by inverting light form, then hue shifting.
+           This WILL distort some brand colors (especially blues). Adjust coefficients as needed. */
+        .forced-dark-form iframe {
+          filter: invert(0.92) hue-rotate(180deg) contrast(0.9) brightness(0.85)
+            saturate(0.9);
+        }
+        /* If user prefers light scheme we can disable (optional). */
+        @media (prefers-color-scheme: light) {
+          .forced-dark-form iframe {
+            filter: invert(0.05) hue-rotate(0deg) contrast(1) brightness(1);
+          }
+        }
+      `}</style>
     </div>
   );
 }
