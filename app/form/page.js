@@ -1,9 +1,10 @@
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
+import HadafDownloadCTA from "../components/HadafDownloadCTA";
 import GoogleFormEmbed from "../components/GoogleFormEmbed";
 
 export const metadata = {
-  title: "Contact Form | code.af",
+  title: "Registration Form | code.af",
   description: "Submit your request — contact form embedded (Google Form).",
 };
 
@@ -67,6 +68,7 @@ export default function FormPage() {
           </p>
         </div>
       </section>
+      <HadafDownloadCTA />
       <Footer />
     </main>
   );
