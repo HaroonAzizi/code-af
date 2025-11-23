@@ -21,6 +21,15 @@ export default function FormPage() {
           <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-cyan-300 to-blue-500">
             Register for the upcoming webinar
           </h1>
+
+          {/* Closed Registration Banner */}
+          <div className="mt-6 p-4 rounded-xl bg-red-500/10 border border-red-500/20 flex items-center gap-3">
+            <div className="h-2 w-2 rounded-full bg-red-500 animate-pulse" />
+            <p className="text-red-200 font-medium text-sm sm:text-base">
+              Registrations are now closed. Thank you for your interest!
+            </p>
+          </div>
+
           <p className="mt-4 sm:mt-5 max-w-2xl text-neutral-400 text-sm sm:text-base leading-relaxed">
             Join our free webinar on{" "}
             <b>“Software Engineering: A Million-Dollar Market for Afghans”</b>,
@@ -51,9 +60,22 @@ export default function FormPage() {
             <br />
             8:00 PM Kabul Time
           </p>
-          <div className="mt-8 sm:mt-10 w-full">
-            <GoogleFormEmbed src={FORM_SRC} forcedLocale="en-GB" />
+          <div className="mt-8 sm:mt-10 w-full relative">
+            {/* Overlay to disable interaction */}
+            <div className="absolute inset-0 z-10 bg-neutral-950/80 backdrop-blur-[2px] flex flex-col items-center justify-center text-center p-6 rounded-xl border border-neutral-800">
+              <h3 className="text-2xl font-bold text-white mb-2">
+                Registrations Closed
+              </h3>
+              <p className="text-neutral-400 max-w-md">
+                We have reached capacity for this webinar. Please stay tuned for
+                future events.
+              </p>
+            </div>
+            <div className="opacity-20 pointer-events-none select-none grayscale">
+              <GoogleFormEmbed src={FORM_SRC} forcedLocale="en-GB" />
+            </div>
           </div>
+          {/* 
           <p className="mt-6 text-xs text-neutral-500 text-center">
             Having trouble?{" "}
             <a
@@ -65,7 +87,8 @@ export default function FormPage() {
               Open the form in a new tab
             </a>
             .
-          </p>
+          </p> 
+          */}
         </div>
       </section>
       <HadafDownloadCTA />
