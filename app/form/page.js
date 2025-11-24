@@ -68,7 +68,7 @@ export default function FormPage() {
               </h3>
               <p className="text-neutral-400 max-w-md">
                 We have reached capacity for this webinar. Please stay tuned for
-                future events.
+                future events. Visit Hadaf (had.af) and Code.af for updates.
               </p>
             </div>
             <div className="opacity-20 pointer-events-none select-none grayscale">
