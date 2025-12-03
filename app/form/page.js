@@ -88,6 +88,7 @@ export default function FormPage() {
             </a>
             .
           </p> 
+          this will be opened soon
           */}
         </div>
       </section>
