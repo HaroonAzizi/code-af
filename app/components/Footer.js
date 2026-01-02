@@ -250,7 +250,7 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 text-center md:text-left">
             <div className="text-sm sm:text-base text-white/60 order-2 md:order-1">
               <div className="mb-2 md:mb-0">
-                © 2025 code.af • All rights reserved
+                © 2026 code.af • All rights reserved
               </div>
               <div className="text-xs sm:text-sm">
                 🇦🇫 Made with ❤️ in Afghanistan
