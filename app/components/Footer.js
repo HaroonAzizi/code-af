@@ -198,14 +198,6 @@ export default function Footer() {
                   Contact
                 </a>
               </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-white/70 hover:text-blue-400 transition-colors block py-1"
-                >
-                  Privacy Policy
-                </a>
-              </li>
             </ul>
           </div>
 
